@@ -109,6 +109,38 @@ footer p {
   font-size: 1rem;
 }
 
+/* ==== Footer ==== */
+footer {
+  background: rgb(65, 66, 245); /* azul fuerte */
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  position: relative;
+}
+
+/* Contenedor de enlaces sociales */
+footer .social-links {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* separación entre íconos */
+}
+
+/* Íconos de redes */
+footer .social-links a img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto hover */
+footer .social-links a img:hover {
+  transform: scale(1.2); /* zoom */
+  box-shadow: 0 0 12px rgb(193, 250, 59); /* verde brillante */
+}
+
+
 
 /* ENLACES GENERALES */
 a {
