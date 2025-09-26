@@ -1,0 +1,86 @@
+/* ==== ESTILOS BASE ==== */
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(135deg, rgb(65, 66, 245), rgb(193, 250, 59));
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  line-height: 1.7;
+}
+
+/* ==== HEADER ==== */
+header {
+  text-align: center;
+  padding: 2rem;
+  background: rgba(0,0,0,0.4);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  border-bottom: 3px solid #fff;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+/* ==== NAV ==== */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  background: rgba(255,255,255,0.15);
+  padding: 1rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+  background: rgb(65, 66, 245);
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  background: rgb(193, 250, 59);
+  color: rgb(65, 66, 245);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+}
+
+/* ==== MAIN ==== */
+main {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: rgba(0,0,0,0.4);
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.6);
+}
+
+h2, h3 {
+  color: rgb(193, 250, 59);
+}
+
+/* ==== CODE BLOCKS ==== */
+pre {
+  background: rgba(255,255,255,0.1);
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  border: 1px solid #fff;
+}
+
+code {
+  font-family: "Fira Code", monospace;
+  color: #fff;
+}
+
+/* ==== FOOTER ==== */
+footer {
+  text-align: center;
+  padding: 1.2rem;
+  background: rgba(0,0,0,0.6);
+  font-size: 0.9rem;
+  border-top: 2px solid #fff;
+}

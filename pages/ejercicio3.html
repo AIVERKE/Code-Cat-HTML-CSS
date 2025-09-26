@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multimedia | Code Cats Studio</title>
+  <link rel="stylesheet" type="text/css" href="../styles/base_teoria.css">
+</head>
+<body>
+  <header>
+    <h1>🐱 Code Cats Studio</h1>
+    <p>Actividad Práctica - Multimedia en HTML</p>
+  </header>
+
+  <nav>
+    <a href="../index.html">🏠 Inicio</a>
+    <a href="#actividad">💻 Actividad</a>
+  </nav>
+
+  <main id="actividad">
+    <section>
+      <h2>Actividad Práctica: Multimedia en HTML</h2>
+
+      <h3>Descripción de la actividad</h3>
+      <p>Crear un documento HTML que contenga:</p>
+      <ol>
+        <li><strong>Una imagen con pie de foto</strong>
+          <ul>
+            <li>Utilizar la etiqueta <code>&lt;figure&gt;</code> para contener la imagen.</li>
+            <li>La imagen debe incluir el atributo <code>alt</code> con una descripción.</li>
+            <li>Añadir un <code>&lt;figcaption&gt;</code> con el pie de foto que describa la imagen.</li>
+          </ul>
+        </li>
+        <li><strong>Un recurso multimedia (audio o video) con controles</strong>
+          <ul>
+            <li>Insertar un archivo de <code>&lt;audio&gt;</code> o <code>&lt;video&gt;</code>.</li>
+            <li>Debe incluir el atributo <code>controls</code> para permitir reproducir, pausar y ajustar el volumen.</li>
+            <li>Se pueden agregar fuentes alternativas con <code>&lt;source&gt;</code> y subtítulos opcionales con <code>&lt;track&gt;</code> (en caso de video).</li>
+          </ul>
+        </li>
+      </ol>
+
+      <h3>Ejemplo de código</h3>
+      <pre><code>&lt;!-- Imagen con pie de foto --&gt;
+&lt;figure&gt;
+  &lt;img src="paisaje.jpg" alt="Paisaje natural" width="400"&gt;
+  &lt;figcaption&gt;Vista panorámica de un paisaje montañoso&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;!-- Recurso multimedia: audio --&gt;
+&lt;audio controls&gt;
+  &lt;source src="cancion.mp3" type="audio/mpeg"&gt;
+  Su navegador no soporta audio HTML5.
+&lt;/audio&gt;
+
+&lt;!-- Recurso multimedia: video --&gt;
+&lt;video width="320" height="240" controls&gt;
+  &lt;source src="video.mp4" type="video/mp4"&gt;
+  &lt;track src="subtitulos.vtt" kind="subtitles" srclang="es" label="Español"&gt;
+  Su navegador no soporta video HTML5.
+&lt;/video&gt;</code></pre>
+
+      <h3>Instrucciones</h3>
+      <ol>
+        <li>Abrir un editor de texto y crear un archivo HTML nuevo (por ejemplo, <code>multimedia.html</code>).</li>
+        <li>Escribir la <strong>estructura básica de HTML</strong> (<code>&lt;!DOCTYPE html&gt;</code>, <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, <code>&lt;title&gt;</code>, <code>&lt;body&gt;</code>).</li>
+        <li>Insertar una <strong>imagen con pie de foto</strong> usando <code>&lt;figure&gt;</code> y <code>&lt;figcaption&gt;</code>.</li>
+        <li>Insertar un <strong>recurso multimedia</strong> (audio o video) usando <code>&lt;audio&gt;</code> o <code>&lt;video&gt;</code> con controles visibles.</li>
+        <li>Abrir el archivo en un navegador para <strong>verificar que la imagen, el pie de foto y el multimedia se muestran y funcionan correctamente</strong>.</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer>
+    <p>Code Cats Studio © 2025 | Hecho con ❤️ y muchas ganas de aprender</p>
+  </footer>
+</body>
+</html>

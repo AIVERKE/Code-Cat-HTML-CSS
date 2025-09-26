@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multimedia y Gráficos | Code Cats Studio</title>
+  <link rel="stylesheet" type="text/css" href="../styles/base_teoria.css">
+</head>
+<body>
+  <header>
+    <h1>🐱 Code Cats Studio</h1>
+    <p>Curso de Programación - Multimedia y Gráficos HTML</p>
+  </header>
+
+  <nav>
+    <a href="../index.html">🏠 Inicio</a>
+    <a href="#contenido">📘 Contenido</a>
+    <a href="../pages/ejercicio3.html">🏅 Ejercicio</a>
+  </nav>
+
+  <main id="contenido">
+    <section>
+      <h2>📘Multimedia y Gráficos en HTML</h2>
+      <p>HTML permite la incorporación de <strong>contenido visual y auditivo</strong> en las páginas web. Este bloque se centra en elementos básicos para integrar imágenes, figuras, gráficos vectoriales y archivos de audio y video.</p>
+
+      <h3>Imágenes (&lt;img&gt;, &lt;map&gt;, &lt;area&gt;)</h3>
+      <h4>&lt;img&gt; – Imagen</h4>
+      <p>La etiqueta <code>&lt;img&gt;</code> se utiliza para insertar imágenes:</p>
+      <pre><code>&lt;img src="imagen.jpg" alt="Descripción de la imagen" width="300"&gt;</code></pre>
+
+      <h4>&lt;map&gt; y &lt;area&gt; – Mapas de imagen</h4>
+      <p>Permiten definir áreas clicables dentro de una imagen:</p>
+      <pre><code>&lt;img src="mapa.jpg" usemap="#mapa1"&gt;
+&lt;map name="mapa1"&gt;
+   &lt;area shape="rect" coords="34,44,270,350" href="pagina1.html" alt="Sección 1"&gt;
+&lt;/map&gt;</code></pre>
+
+      <h3>Figuras y leyendas (&lt;figure&gt;, &lt;figcaption&gt;)</h3>
+      <pre><code>&lt;figure&gt;
+   &lt;img src="paisaje.jpg" alt="Paisaje natural" width="400"&gt;
+   &lt;figcaption&gt;Vista panorámica de un paisaje montañoso&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+
+      <h3>Gráficos y vectores (&lt;canvas&gt;, &lt;svg&gt;)</h3>
+      <h4>&lt;canvas&gt; – Lienzo para gráficos dinámicos</h4>
+      <pre><code>&lt;canvas id="miCanvas" width="200" height="100" style="border:1px solid #000;"&gt;&lt;/canvas&gt;</code></pre>
+      <p>Se requiere JavaScript para dibujar en el canvas.</p>
+
+      <h4>&lt;svg&gt; – Gráficos vectoriales</h4>
+      <pre><code>&lt;svg width="200" height="100"&gt;
+   &lt;rect width="200" height="100" style="fill:blue;stroke:black;stroke-width:2;"&gt;&lt;/rect&gt;
+&lt;/svg&gt;</code></pre>
+
+      <h3>Audio y Video (&lt;audio&gt;, &lt;video&gt;, &lt;source&gt;, &lt;track&gt;)</h3>
+      <h4>&lt;audio&gt; – Archivo de audio</h4>
+      <pre><code>&lt;audio controls&gt;
+   &lt;source src="cancion.mp3" type="audio/mpeg"&gt;
+   Su navegador no soporta audio HTML5.
+&lt;/audio&gt;</code></pre>
+
+      <h4>&lt;video&gt; – Archivo de video</h4>
+      <pre><code>&lt;video width="320" height="240" controls&gt;
+   &lt;source src="video.mp4" type="video/mp4"&gt;
+   &lt;track src="subtitulos.vtt" kind="subtitles" srclang="es" label="Español"&gt;
+   Su navegador no soporta video HTML5.
+&lt;/video&gt;</code></pre>
+
+      <h3>📝 Resumen</h3>
+      <ul>
+        <li>Insertar imágenes y asociar mapas de imagen interactivos.</li>
+        <li>Crear figuras con descripciones semánticas.</li>
+        <li>Integrar gráficos mediante <code>&lt;canvas&gt;</code> y <code>&lt;svg&gt;</code>.</li>
+        <li>Reproducir archivos de audio y video con controles y subtítulos.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>Code Cats Studio © 2025 | Hecho con ❤️ y muchas ganas de aprender</p>
+  </footer>
+</body>
+</html>

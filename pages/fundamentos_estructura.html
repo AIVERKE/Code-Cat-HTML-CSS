@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fundamentos y Estructura HTML | Code Cats Studio</title>
+  <link rel="stylesheet" type="text/css" href="../styles/base_teoria.css">
+</head>
+<body>
+  <header>
+    <h1>🐱 Code Cats Studio</h1>
+    <p>Curso de Programación - Fundamentos y Estructura HTML</p>
+  </header>
+
+  <nav>
+    <a href="../index.html">🏠 Inicio</a>
+    <a href="#contenido">📘 Contenido</a>
+    <a href="../pages/ejercicio1.html">🏅 Ejercicio</a>
+  </nav>
+
+  <main id="contenido">
+    <section>
+      <h2>📘 Fundamentos y Estructura HTML</h2>
+
+      <h3>Introducción a HTML</h3>
+      <p>
+        HTML (HyperText Markup Language) es el <strong>lenguaje de marcado estándar para la creación de páginas web</strong>. 
+        Su función principal es estructurar el contenido mediante <strong>etiquetas</strong> (tags).
+      </p>
+      <ul>
+        <li>No es un lenguaje de programación, sino un lenguaje de marcado.</li>
+        <li>Define la estructura y semántica del contenido.</li>
+        <li>Trabaja con <strong>CSS</strong> y <strong>JavaScript</strong>.</li>
+      </ul>
+
+      <h3>Documentos HTML: Doctype y etiquetas raíz</h3>
+      <p>Todo documento comienza con el <strong>DOCTYPE</strong> que indica la versión del lenguaje:</p>
+      <pre><code>&lt;!DOCTYPE html&gt;</code></pre>
+
+      <p>Luego se define la etiqueta raíz:</p>
+      <pre><code>&lt;html lang="es"&gt; ... &lt;/html&gt;</code></pre>
+
+      <h3>Elementos del encabezado</h3>
+      <p>Dentro del <code>&lt;head&gt;</code> se colocan elementos no visibles directamente como:</p>
+      <ul>
+        <li><code>&lt;title&gt;</code> → título de la página.</li>
+        <li><code>&lt;meta&gt;</code> → metadatos de la página.</li>
+      </ul>
+      <pre><code>&lt;head&gt;
+   &lt;meta charset="UTF-8"&gt;
+   &lt;title&gt;Mi primera página&lt;/title&gt;
+   &lt;meta name="author" content="Diego Gutiérrez"&gt;
+   &lt;meta name="description" content="Ejemplo introductorio de HTML"&gt;
+&lt;/head&gt;
+</code></pre>
+
+      <h3>Cuerpo del documento</h3>
+      <pre><code>&lt;body&gt;
+   &lt;h1&gt;Bienvenidos a HTML&lt;/h1&gt;
+   &lt;p&gt;Este es mi primer párrafo.&lt;/p&gt;
+&lt;/body&gt;
+</code></pre>
+
+      <h3>Encabezados</h3>
+      <pre><code>&lt;h1&gt;Encabezado principal&lt;/h1&gt;
+&lt;h2&gt;Subtema&lt;/h2&gt;
+&lt;h3&gt;Detalle específico&lt;/h3&gt;
+</code></pre>
+
+      <h3>Párrafos y saltos de línea</h3>
+      <pre><code>&lt;p&gt;Este es un párrafo.&lt;/p&gt;
+&lt;p&gt;Este es otro párrafo.&lt;/p&gt;
+&lt;p&gt;Línea uno.&lt;br&gt;Línea dos.&lt;/p&gt;
+</code></pre>
+
+      <h3>Comentarios</h3>
+      <pre><code>&lt;!-- Este es un comentario --&gt;
+&lt;p&gt;Texto visible&lt;/p&gt;
+</code></pre>
+
+      <h3>📝 Resumen</h3>
+      <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+   &lt;meta charset="UTF-8"&gt;
+   &lt;title&gt;Ejemplo de HTML&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+   &lt;h1&gt;Encabezado principal&lt;/h1&gt;
+   &lt;p&gt;Este es un párrafo de ejemplo.&lt;/p&gt;
+   &lt;!-- Comentario --&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+    </section>
+  </main>
+
+  <footer>
+    <p>Code Cats Studio © 2025 | Hecho con ❤️ y muchas ganas de aprender</p>
+  </footer>
+</body>
+</html>
