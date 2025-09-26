@@ -159,6 +159,53 @@ h3 {
 }
 
 
+/* 📸 Estilos generales para todas las imágenes */
+img {
+  max-width: 100%;   /* Nunca se desborda */
+  height: auto;      /* Mantiene proporción */
+  display: block;    /* Evita espacios raros */
+  margin: 0 auto;    /* Centra imágenes */
+  border-radius: 15px; /* Bordes redondeados como las cards */
+  box-shadow: 4px 4px 12px rgba(0,0,0,0.15),
+              -4px -4px 12px rgba(255,255,255,0.7);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto hover suave */
+img:hover {
+  transform: scale(1.03);
+  box-shadow: 6px 6px 18px rgba(0,0,0,0.25),
+              -6px -6px 18px rgba(255,255,255,0.9);
+}
+
+/* Logo en el header */
+header img {
+  max-width: 150px;  /* Controla tamaño del logo */
+  margin-bottom: 1rem;
+  border-radius: 50%; /* Logo circular si lo prefieres */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* Iconos pequeños en el nav */
+nav img {
+  width: 20px;   /* Tamaño fijo para que no rompan */
+  height: 20px;
+  margin-right: 8px;
+  border-radius: 5px;
+  box-shadow: none; /* Iconos simples, sin sombra */
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Imágenes dentro de las secciones */
+section img {
+  max-width: 80px;
+  margin-bottom: 1rem;
+  border-radius: 12px;
+}
+
+
+
 /* 📱 RESPONSIVIDAD */
 @media (max-width: 768px) {
   header h1 {
