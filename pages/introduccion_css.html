@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introducción a CSS | Code Cats Studio</title>
+  <link rel="stylesheet" type="text/css" href="../styles/base_teoria.css">
+  <link rel="icon" type="image/png" href="../images/icon.jpg">
+</head>
+<body>
+  <header>
+    <img src="../images/logo1v.jpg" alt="Logo Code Cats Studio">
+    <h1>Code Cats Studio</h1>
+    <p>Curso de Programación - Introducción a CSS</p>
+  </header>
+
+  <nav>
+    <a href="../index.html"><img src="../images/home.gif" alt="Inicio">Inicio</a>
+    <a href="#contenido"><img src="../images/libro.png" alt="Contenido">Contenido</a>
+    <a href="../pages/reto_css.html"><img src="../images/code.gif" alt="Ejercicio">Ejercicio</a>
+  </nav>
+
+  <main id="contenido">
+    <section>
+      <h2>Introducción a CSS</h2>
+      <p>CSS (Cascading Style Sheets) se utiliza para dar estilo y formato a las páginas web, separando la presentación del contenido.</p>
+
+      <!-- Formas de aplicar CSS -->
+      <h3>Formas de aplicar CSS</h3>
+
+      <h4>1. Inline (directamente en la etiqueta)</h4>
+      <p>Ejemplo:</p>
+      <pre><code>&lt;p style="color: red; font-size: 18px;"&gt;Texto en rojo y tamaño 18px&lt;/p&gt;</code></pre>
+ 
+
+      <h4>2. Interno (en la misma página dentro de &lt;style&gt;)</h4>
+      <pre><code>&lt;style&gt;
+p {
+    color: blue;
+    font-size: 16px;
+}
+&lt;/style&gt;
+
+&lt;p&gt;Texto azul con CSS interno&lt;/p&gt;</code></pre>
+      
+
+      <h4>3. Externo (archivo .css)</h4>
+      <pre><code>&lt;link rel="stylesheet" href="estilos.css"&gt;</code></pre>
+
+
+      <!-- Sintaxis básica -->
+      <h3>Sintaxis básica</h3>
+      <pre><code>selector {
+    propiedad: valor;
+}</code></pre>
+     
+      <!-- Selectores principales -->
+      <h3>Selectores principales</h3>
+      <pre><code>/* Selector por elemento */
+p {
+    color: green;
+}
+
+/* Selector por clase */
+.clase-ejemplo {
+    background-color: yellow;
+}
+
+/* Selector por ID */
+#id-ejemplo {
+    font-size: 20px;
+}</code></pre>
+      
+
+      <!-- Propiedades básicas -->
+      <h3>Propiedades básicas</h3>
+      <pre><code>p {
+    color: red;              /* Color del texto */
+    font-size: 18px;         /* Tamaño de la fuente */
+    background-color: lightgray; /* Color de fondo */
+    margin: 10px;            /* Margen exterior */
+    padding: 5px;            /* Espacio interior */
+}</code></pre>
+    <h3>Resumen</h3>
+    <ul>
+        <li>Aplicar CSS de tres formas: <strong>inline</strong> (en la etiqueta), <strong>interno</strong> (dentro de <code>&lt;style&gt;</code>) y <strong>externo</strong> (archivo .css).</li>
+        <li>La sintaxis básica incluye un <em>selector</em> y un bloque de <em>propiedades</em> con valores.</li>
+        <li>Usar selectores principales: por elemento, por clase (<code>.</code>) y por ID (<code>#</code>).</li>
+        <li>Propiedades básicas para estilo: <code>color</code>, <code>font-size</code>, <code>background-color</code>, <code>margin</code> y <code>padding</code>.</li>
+        <li>Combinar selectores y propiedades para dar formato y resaltar elementos de la página.</li>
+    </ul>
+
+
+    </section>
+  </main>
+
+  <footer>
+    <p>Code Cats Studio © 2025 | Hecho con ❤️ y muchas ganas de aprender</p>
+  </footer>
+</body>
+</html>

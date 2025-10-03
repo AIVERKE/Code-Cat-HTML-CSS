@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diseño y Semántica | Code Cats Studio</title>
+  <link rel="stylesheet" type="text/css" href="../styles/base_teoria.css">
+  <link rel="icon" type="image/png" href="../images/icon.jpg">
+</head>
+<body>
+  <header>
+    <img src="../images/logo1v.jpg">
+    <h1>Code Cats Studio</h1>
+    <p>Curso de Programación - Diseño y Semántica HTML</p>
+  </header>
+
+  <nav>
+    <a href="../index.html"><img src="../images/home.gif">Inicio</a>
+    <a href="#contenido"><img src="../images/libro.png">Contenido</a>
+    <a href="../pages/ejercicio2_sesion2.html"><img src="../images/code.gif">Ejercicio</a>
+  </nav>
+
+  <main id="contenido">
+    <section>
+      <h2>Diseño y Semántica en HTML</h2>
+      <p>
+        Las etiquetas semánticas permiten estructurar el contenido de manera lógica y accesible, mejorando 
+        la experiencia del usuario y el posicionamiento web.
+      </p>
+
+      <h3>Contenedores generales (&lt;div&gt;, &lt;span&gt;)</h3>
+      <p>Se usan para agrupar contenido y aplicar estilos o scripts sin aportar significado semántico:</p>
+      <pre><code>&lt;div class="contenedor"&gt;
+   &lt;span&gt;Texto resaltado&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+
+      <h3>Secciones semánticas principales (&lt;header&gt;, &lt;footer&gt;, &lt;main&gt;, &lt;nav&gt;)</h3>
+      <pre><code>&lt;header&gt;Encabezado de la página&lt;/header&gt;
+&lt;nav&gt;Menú de navegación&lt;/nav&gt;
+&lt;main&gt;Contenido principal&lt;/main&gt;
+&lt;footer&gt;Pie de página&lt;/footer&gt;</code></pre>
+
+      <h3>Organización de contenido (&lt;section&gt;, &lt;article&gt;, &lt;aside&gt;)</h3>
+      <pre><code>&lt;section&gt;
+   &lt;h2&gt;Sección principal&lt;/h2&gt;
+   &lt;article&gt;
+      &lt;h3&gt;Artículo&lt;/h3&gt;
+      &lt;p&gt;Contenido del artículo.&lt;/p&gt;
+   &lt;/article&gt;
+   &lt;aside&gt;
+      Información complementaria o anuncios
+   &lt;/aside&gt;
+&lt;/section&gt;</code></pre>
+
+      <h3>Elementos interactivos (&lt;details&gt;, &lt;summary&gt;)</h3>
+      <pre><code>&lt;details&gt;
+   &lt;summary&gt;Más información&lt;/summary&gt;
+   &lt;p&gt;Contenido adicional que se puede mostrar u ocultar.&lt;/p&gt;
+&lt;/details&gt;</code></pre>
+
+      <h3>Diálogos modales (&lt;dialog&gt;)</h3>
+      <pre><code>&lt;dialog id="modal"&gt;
+   &lt;p&gt;Este es un diálogo modal.&lt;/p&gt;
+   &lt;button onclick="document.getElementById('modal').close()"&gt;Cerrar&lt;/button&gt;
+&lt;/dialog&gt;</code></pre>
+
+      <h3>Diseño responsivo y layout</h3>
+      <p>Las etiquetas semánticas facilitan el diseño adaptable a diferentes dispositivos y la organización lógica del layout.</p>
+      <pre><code>&lt;header&gt;Encabezado&lt;/header&gt;
+&lt;nav&gt;Menú&lt;/nav&gt;
+&lt;main&gt;
+   &lt;section&gt;Contenido principal&lt;/section&gt;
+   &lt;aside&gt;Barra lateral&lt;/aside&gt;
+&lt;/main&gt;
+&lt;footer&gt;Pie de página&lt;/footer&gt;</code></pre>
+
+      <h3>Resumen</h3>
+    <ul>
+    <li>Usar etiquetas semánticas para estructurar el contenido: <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code>.</li>
+    <li>Organizar contenido con <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code> y <code>&lt;aside&gt;</code>.</li>
+    <li>Agregar elementos interactivos con <code>&lt;details&gt;</code> y <code>&lt;summary&gt;</code>.</li>
+    <li>Implementar diálogos modales con <code>&lt;dialog&gt;</code>.</li>
+    <li>Facilitar el diseño responsivo mediante la correcta estructura semántica.</li>
+    </ul>
+
+
+    </section>
+  </main>
+
+  <footer>
+    <p>Code Cats Studio © 2025 | Hecho con ❤️ y muchas ganas de aprender</p>
+  </footer>
+</body>
+</html>

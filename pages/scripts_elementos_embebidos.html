@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scripts y Elementos Embebidos | Code Cats Studio</title>
+  <link rel="stylesheet" type="text/css" href="../styles/base_teoria.css">
+  <link rel="icon" type="image/png" href="../images/icon.jpg">
+</head>
+<body>
+  <header>
+    <img src="../images/logo1v.jpg" alt="Logo Code Cats Studio">
+    <h1>Code Cats Studio</h1>
+    <p>Curso de Programación - Scripts y Elementos Embebidos</p>
+  </header>
+
+  <nav>
+    <a href="../index.html"><img src="../images/home.gif" alt="Inicio">Inicio</a>
+    <a href="#contenido"><img src="../images/libro.png" alt="Contenido">Contenido</a>
+    <a href="../pages/ejercicio3_sesion2.html"><img src="../images/code.gif" alt="Ejercicio">Ejercicio</a>
+  </nav>
+
+  <main id="contenido">
+    <section>
+      <h2>Scripts y Elementos Embebidos en HTML</h2>
+      <p>Este bloque introduce JavaScript y contenido externo dentro de HTML, mostrando cómo interactuar con la página y añadir elementos multimedia.</p>
+
+      <!-- JavaScript embebido inline -->
+      <h3>JavaScript embebido (&lt;script&gt; inline)</h3>
+      <p>Ejemplo de código JavaScript dentro de la página:</p>
+      <button onclick="alert('¡Hola! Este es un mensaje desde JavaScript.')">Mostrar alerta</button>
+      <p><em>Explicación:</em> El atributo <code>onclick</code> ejecuta código JavaScript cuando se hace clic.</p>
+
+      <!-- JavaScript externo -->
+      <h3>JavaScript externo (&lt;script&gt; externo)</h3>
+      <p>Se puede vincular un archivo .js externo:</p>
+      <pre><code>&lt;script src="scripts/mi_script.js"&gt;&lt;/script&gt;</code></pre>
+      <p><em>Explicación:</em> Mantiene el código separado del HTML, facilitando mantenimiento y reutilización.</p>
+
+      <!-- Noscript -->
+      <h3>&lt;noscript&gt;</h3>
+      <noscript style="color:red; font-weight:bold;">
+        JavaScript está desactivado en tu navegador. Algunas funciones pueden no funcionar.
+      </noscript>
+      <p><em>Explicación:</em> Se muestra contenido alternativo si JavaScript no está disponible.</p>
+
+      <!-- Objetos y plugins -->
+      <h3>Objetos y plugins (&lt;embed&gt;, &lt;object&gt;, &lt;param&gt;)</h3>
+      <p>Ejemplo de contenido multimedia embebido:</p>
+      <pre><code>&lt;embed src="video_ejemplo.mp4" type="video/mp4" width="300" height="200"&gt;
+&lt;object data="video_ejemplo.mp4" type="video/mp4" width="300" height="200"&gt;
+    &lt;param name="autoplay" value="true"&gt;
+    Tu navegador no soporta este contenido.
+&lt;/object&gt;</code></pre>
+      <p><em>Explicación:</em> Permite incrustar multimedia o plugins dentro de la página.</p>
+
+      <!-- Marcos embebidos -->
+      <h3>Marcos embebidos (&lt;iframe&gt;)</h3>
+      <p>Ejemplo de código de un iframe:</p>
+      <pre><code>&lt;iframe src="https://www.example.com" width="400" height="200" sandbox="allow-scripts allow-same-origin"&gt;&lt;/iframe&gt;</code></pre>
+      <p><em>Explicación:</em> Inserta otra página web dentro de la actual. El atributo <code>sandbox</code> mejora la seguridad limitando acciones del contenido externo.</p>
+
+      <!-- Consideraciones de seguridad -->
+      <h3>Buenas prácticas y seguridad</h3>
+      <ul>
+        <li>Evitar usar JavaScript inline para código complejo.</li>
+        <li>Usar archivos externos y mantenerlos organizados.</li>
+        <li>Usar <code>sandbox</code> y atributos seguros en <code>&lt;iframe&gt;</code>.</li>
+        <li>Validar contenido externo antes de incrustarlo.</li>
+      </ul>
+
+      <!-- Resumen -->
+      <h3>Resumen</h3>
+        <ul>
+        <li>Insertar código JavaScript directamente con <code>&lt;script&gt;</code> inline o desde archivos externos.</li>
+        <li>Usar <code>&lt;noscript&gt;</code> para contenido alternativo cuando JavaScript está desactivado.</li>
+        <li>Incrustar contenido multimedia con <code>&lt;embed&gt;</code>, <code>&lt;object&gt;</code> y <code>&lt;param&gt;</code>.</li>
+        <li>Incorporar otras páginas web mediante <code>&lt;iframe&gt;</code> con atributos de seguridad como <code>sandbox</code>.</li>
+        <li>Seguir buenas prácticas: evitar código inline complejo, organizar scripts externos y validar contenido externo.</li>
+        </ul>
+
+
+    </section>
+  </main>
+
+  <footer>
+    <p>Code Cats Studio © 2025 | Hecho con ❤️ y muchas ganas de aprender</p>
+  </footer>
+</body>
+</html>

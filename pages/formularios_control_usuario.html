@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formularios y Controles de Usuario | Code Cats Studio</title>
+  <link rel="stylesheet" type="text/css" href="../styles/base_teoria.css">
+  <link rel="icon" type="image/png" href="../images/icon.jpg">
+</head>
+<body>
+  <header>
+    <img src="../images/logo1v.jpg">
+    <h1>Code Cats Studio</h1>
+    <p>Curso de Programación - Formularios y Controles de Usuario</p>
+  </header>
+
+  <nav>
+    <a href="../index.html"><img src="../images/home.gif">Inicio</a>
+    <a href="#contenido"><img src="../images/libro.png">Contenido</a>
+    <a href="../pages/ejercicio1_sesion2.html"><img src="../images/code.gif">Ejercicio</a>
+  </nav>
+
+  <main id="contenido">
+    <section>
+      <h2>Formularios y Controles de Usuario en HTML</h2>
+      <p>
+        Los <strong>formularios en HTML</strong> permiten a los usuarios ingresar información que puede enviarse 
+        y procesarse en un servidor. Incluyen <strong>diversos tipos de controles</strong> como campos de texto, 
+        botones, listas desplegables y más.
+      </p>
+
+      <h3>Estructura básica (&lt;form&gt;)</h3>
+      <p>Se utiliza <code>&lt;form&gt;</code> con atributos principales:</p>
+      <ul>
+        <li><code>action</code>: destino al que se enviarán los datos.</li>
+        <li><code>method</code>: método de envío (<code>GET</code> o <code>POST</code>).</li>
+      </ul>
+      <pre><code>&lt;form action="" method="post"&gt;
+   &lt;!-- Controles aquí --&gt;
+&lt;/form&gt;</code></pre>
+
+      <h3>Campos de entrada (&lt;input&gt;)</h3>
+      <p>Los campos de entrada permiten capturar diferentes tipos de datos:</p>
+      <pre><code>&lt;input type="text" name="nombre" placeholder="Nombre" required&gt;
+&lt;input type="email" name="correo" placeholder="Correo electrónico"&gt;
+&lt;input type="password" name="clave" required&gt;
+&lt;input type="number" name="edad" min="18" max="99"&gt;
+&lt;input type="date" name="nacimiento"&gt;
+&lt;input type="checkbox" name="suscribir"&gt; Suscribirme
+&lt;input type="radio" name="genero" value="M"&gt; Masculino
+&lt;input type="radio" name="genero" value="F"&gt; Femenino
+&lt;input type="file" name="documento"&gt;
+</code></pre>
+
+      <h3>Áreas de texto y botones (&lt;textarea&gt;, &lt;button&gt;)</h3>
+      <pre><code>&lt;textarea name="mensaje" rows="4" cols="40"&gt;&lt;/textarea&gt;
+
+&lt;button type="submit"&gt;Enviar&lt;/button&gt;
+&lt;button type="reset"&gt;Limpiar&lt;/button&gt;
+&lt;button type="button"&gt;Botón simple&lt;/button&gt;
+</code></pre>
+
+      <h3>Listas desplegables (&lt;select&gt;, &lt;option&gt;, &lt;optgroup&gt;)</h3>
+      <pre><code>&lt;select name="pais"&gt;
+   &lt;option value="bo"&gt;Bolivia&lt;/option&gt;
+   &lt;option value="mx"&gt;México&lt;/option&gt;
+   &lt;optgroup label="Europa"&gt;
+      &lt;option value="es"&gt;España&lt;/option&gt;
+      &lt;option value="fr"&gt;Francia&lt;/option&gt;
+   &lt;/optgroup&gt;
+&lt;/select&gt;
+</code></pre>
+
+      <h3>Etiquetas y agrupamientos (&lt;label&gt;, &lt;fieldset&gt;, &lt;legend&gt;)</h3>
+      <pre><code>&lt;label for="usuario"&gt;Usuario:&lt;/label&gt;
+&lt;input type="text" id="usuario" name="usuario"&gt;
+
+&lt;fieldset&gt;
+   &lt;legend&gt;Datos personales&lt;/legend&gt;
+   &lt;input type="text" name="nombre" placeholder="Nombre"&gt;
+   &lt;input type="number" name="edad" placeholder="Edad"&gt;
+&lt;/fieldset&gt;
+</code></pre>
+
+      <h3>Otros elementos (&lt;datalist&gt;, &lt;output&gt;, &lt;progress&gt;, &lt;meter&gt;)</h3>
+      <pre><code>&lt;datalist id="navegadores"&gt;
+   &lt;option value="Chrome"&gt;
+   &lt;option value="Firefox"&gt;
+   &lt;option value="Edge"&gt;
+&lt;/datalist&gt;
+&lt;input list="navegadores" name="navegador"&gt;
+
+&lt;output name="resultado"&gt;0&lt;/output&gt;
+
+&lt;progress value="70" max="100"&gt;&lt;/progress&gt;
+
+&lt;meter value="0.6"&gt;60%&lt;/meter&gt;
+</code></pre>
+    <h3>Resumen</h3>
+    <ul>
+    <li>Crear formularios con <code>&lt;form&gt;</code> y definir <code>action</code> y <code>method</code>.</li>
+    <li>Usar campos de entrada variados: <code>&lt;input&gt;</code> de texto, correo, contraseña, número, fecha, checkbox, radio y archivos.</li>
+    <li>Incluir áreas de texto con <code>&lt;textarea&gt;</code> y botones <code>&lt;button&gt;</code> de diferentes tipos.</li>
+    <li>Implementar listas desplegables con <code>&lt;select&gt;</code>, <code>&lt;option&gt;</code> y <code>&lt;optgroup&gt;</code>.</li>
+    <li>Etiquetar y agrupar elementos usando <code>&lt;label&gt;</code>, <code>&lt;fieldset&gt;</code> y <code>&lt;legend&gt;</code>.</li>
+    <li>Otros elementos útiles: <code>&lt;datalist&gt;</code>, <code>&lt;output&gt;</code>, <code>&lt;progress&gt;</code> y <code>&lt;meter&gt;</code>.</li>
+    </ul>
+
+
+    </section>
+  </main>
+
+  <footer>
+    <p>Code Cats Studio © 2025 | Hecho con ❤️ y muchas ganas de aprender</p>
+  </footer>
+</body>
+</html>
