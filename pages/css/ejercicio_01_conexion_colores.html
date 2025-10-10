@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio CSS 01: Conexión de CSS y Colores | Code Cats Studio</title>
+  <link rel="stylesheet" type="text/css" href="../../styles/base_teoria.css">
+  <link rel="stylesheet" href="../../styles/css/base_css.css">
+  <link rel="icon" type="image/png" href="../../images/icon.jpg">
+</head>
+<body>
+
+  <header>
+    <img src="../../images/logo1v.jpg" alt="Logo Code Cats Studio">
+    <h1>Ejercicio CSS 01</h1>
+    <p>Conexión de CSS y Formatos de Colores</p>
+  </header>
+
+  <nav>
+    <a href="../../index.html"><img src="../../images/home.gif" alt="Inicio">Inicio</a>
+    <a href="01_introduccion.html"><img src="../../images/libro.png" alt="Teoría">Teoría CSS</a>
+    <a href="#ejercicio"><img src="../../images/code.gif" alt="Ejercicio">Ejercicio</a>
+  </nav>
+
+  <main id="ejercicio">
+    <section>
+      <h2>🎯 Ejercicio: Conexión de CSS y Formatos de Colores</h2>
+
+      <div class="objetivo">
+        <h3>📋 Objetivo</h3>
+        <p>Aprender a conectar CSS de las <strong>tres formas diferentes</strong> (externo, interno, en línea) y practicar los <strong>cuatro formatos de colores</strong> principales aplicándolos a diferentes elementos.</p>
+      </div>
+
+      <div class="instrucciones">
+        <h3>📝 Instrucciones</h3>
+        <ol>
+          <li><strong>Copia la plantilla HTML</strong> que se proporciona abajo</li>
+          <li><strong>Crea un archivo CSS externo</strong> llamado <code>estilos.css</code></li>
+          <li><strong>Aplica colores a los cuatro divs</strong> usando diferentes métodos:</li>
+          <ul>
+            <li><strong>Div 1:</strong> Color con <strong>CSS externo</strong> usando formato <strong>nombre de color</strong></li> 
+            <li><strong>Div 2:</strong> Color con <strong>CSS interno</strong> usando formato <strong>hexadecimal</strong></li>
+            <li><strong>Div 3:</strong> Color con <strong>CSS en línea</strong> usando formato <strong>RGB</strong></li>
+            <li><strong>Div 4:</strong> Color con <strong>CSS externo</strong> usando formato <strong>HSL</strong></li>
+          </ul>
+          <li><strong>Elige tus colores favoritos</strong> para cada div</li>
+          <li><strong>Asegúrate</strong> de que cada div tenga una altura mínima para ver bien los colores</li>
+        </ol>
+      </div>
+
+      <div class="recordatorio">
+        <h3>💡 Recordatorio de Formatos de Colores</h3>
+        <ul>
+          <li><strong>Nombre:</strong> <code>red</code>, <code>blue</code>, <code>green</code>, <code>orange</code>, <code>purple</code>, etc.</li>
+          <li><strong>Hexadecimal:</strong> <code>#ff0000</code> (rojo), <code>#00ff00</code> (verde), <code>#0000ff</code> (azul)</li>
+          <li><strong>RGB:</strong> <code>rgb(255, 0, 0)</code> (rojo), <code>rgb(0, 255, 0)</code> (verde)</li>
+          <li><strong>HSL:</strong> <code>hsl(0, 100%, 50%)</code> (rojo), <code>hsl(120, 100%, 50%)</code> (verde)</li>
+        </ul>
+      </div>
+
+      <div class="plantilla">
+        <h3>📄 Plantilla HTML</h3>
+        <p><strong>Copia este código y guárdalo como <code>ejercicio01.html</code>:</strong></p>
+        
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Ejercicio CSS - Colores y Conexiones&lt;/title&gt;
+  &lt;!-- 1. AQUÍ va el link al CSS externo --&gt;
+  &lt;link rel="stylesheet" href="estilos.css"&gt;
+  
+  &lt;!-- 2. AQUÍ va el CSS interno --&gt;
+  &lt;style&gt;
+    /* Escribe aquí el CSS interno para el div 2 */
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Ejercicio: Conexión de CSS y Colores&lt;/h1&gt;
+  
+  &lt;div class="caja-externa"&gt;
+    &lt;h2&gt;Caja 1: CSS Externo + Color por Nombre&lt;/h2&gt;
+    &lt;p&gt;Esta caja usa CSS externo con color por nombre&lt;/p&gt;
+  &lt;/div&gt;
+  
+  &lt;div class="caja-interna"&gt;
+    &lt;h2&gt;Caja 2: CSS Interno + Color Hexadecimal&lt;/h2&gt;
+    &lt;p&gt;Esta caja usa CSS interno con color hexadecimal&lt;/p&gt;
+  &lt;/div&gt;
+  
+  &lt;!-- 3. AQUÍ va el CSS en línea para el div 3 --&gt;
+  &lt;div style="/* Escribe aquí el CSS en línea con RGB */"&gt;
+    &lt;h2&gt;Caja 3: CSS en Línea + Color RGB&lt;/h2&gt;
+    &lt;p&gt;Esta caja usa CSS en línea con color RGB&lt;/p&gt;
+  &lt;/div&gt;
+  
+  &lt;div class="caja-hsl"&gt;
+    &lt;h2&gt;Caja 4: CSS Externo + Color HSL&lt;/h2&gt;
+    &lt;p&gt;Esta caja usa CSS externo con color HSL&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+      </div>
+
+
+
+    </section>
+  </main>
+
+  <footer>
+    <p>Code Cats Studio © 2025</p>
+  </footer>
+
+</body>
+</html>

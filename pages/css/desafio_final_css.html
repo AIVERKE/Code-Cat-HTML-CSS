@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desafío Final CSS: Página de Artista | Code Cats Studio</title>
+  <link rel="stylesheet" type="text/css" href="../../styles/base_teoria.css">
+  <link rel="stylesheet" href="../../styles/css/base_css.css">
+  <link rel="icon" type="image/png" href="../../images/icon.jpg">
+</head>
+<body>
+
+  <header>
+    <img src="../../images/logo1v.jpg" alt="Logo Code Cats Studio">
+    <h1>🎵 Desafío Final CSS</h1>
+    <p>Página Completa de Artista Musical</p>
+  </header>
+
+  <nav>
+    <a href="../../index.html"><img src="../../images/home.gif" alt="Inicio">Inicio</a>
+    <a href="#desafio"><img src="../../images/code.gif" alt="Desafío">Desafío</a>
+  </nav>
+
+  <main id="desafio">
+    <section>
+      <h2>🏆 Desafío Final: Página Completa de Artista</h2>
+
+      <div class="objetivo">
+        <h3>🎯 Objetivo</h3>
+        <p>Crear una <strong>página web completa</strong> sobre el tema que más te guste aplicando <strong>TODAS las técnicas CSS</strong> que has aprendido: colores, Box Model, tipografía, listas y tablas. Este es tu proyecto final donde demostrarás todo tu conocimiento.</p>
+      </div>
+
+      <div class="que-aplicar">
+        <h3>🔧 Todo lo que DEBES aplicar</h3>
+        <div class="checklist">
+          <h4>✅ Ejercicio 01 - Colores y Conexión CSS:</h4>
+          <ul>
+            <li>Usar los <strong>3 métodos de CSS</strong> (externo, interno, en línea)</li>
+            <li>Aplicar los <strong>4 formatos de colores</strong> (nombre, hex, RGB, HSL)</li>
+          </ul>
+
+          <h4>✅ Ejercicio 02 - Box Model:</h4>
+          <ul>
+            <li>Centrar elementos con <strong>margin: auto</strong></li>
+            <li>Aplicar <strong>padding, border, margin</strong> a diferentes secciones</li>
+            <li>Usar <strong>width, height</strong> para controlar tamaños</li>
+            <li>Experimentar con <strong>outline</strong> y <strong>overflow</strong></li>
+          </ul>
+
+          <h4>✅ Ejercicio 03 - Tipografía:</h4>
+          <ul>
+            <li>Diferentes <strong>font-family</strong> para títulos y párrafos</li>
+            <li>Varios <strong>font-size</strong> para crear jerarquía</li>
+            <li>Usar <strong>font-weight</strong> para destacar</li>
+            <li>Aplicar <strong>text-transform, text-align, text-shadow</strong></li>
+          </ul>
+
+          <h4>✅ Ejercicio 04 - Listas y Tablas:</h4>
+          <ul>
+            <li>Lista de álbumes con <strong>list-style personalizado</strong></li>
+            <li>Tabla de canciones con <strong>border-collapse, spacing</strong></li>
+            <li>Hacer la tabla <strong>responsive con overflow</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="plantilla">
+        <h3>📄 Plantilla HTML - Copia y Personaliza</h3>
+        <p><strong>Cambia "Joji" por tu tema favorito (artista, deporte, videojuego, película, etc.) y personaliza todo el contenido:</strong></p>
+        
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Tu Artista Favorito - Discografía&lt;/title&gt;
+    
+    &lt;!-- CSS EXTERNO --&gt;
+    &lt;link rel="stylesheet" href="estilos-artista.css"&gt;
+    
+    &lt;!-- CSS INTERNO --&gt;
+    &lt;style&gt;
+        /* Aquí va tu CSS interno */
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    &lt;!-- HEADER PRINCIPAL --&gt;
+    &lt;header class="heroe"&gt;
+        &lt;img src="artista.jpg" alt="Tu Artista" class="imagen-artista"&gt;
+        &lt;h1 class="nombre-artista"&gt;JOJI&lt;/h1&gt;
+        &lt;p class="descripcion-artista"&gt;
+            George Kusunoki Miller, conocido como Joji, es un cantante, compositor 
+            y productor japonés. Su música combina elementos de R&amp;B, lo-fi y trip hop.
+        &lt;/p&gt;
+    &lt;/header&gt;
+
+    &lt;main&gt;
+        &lt;!-- SECCIÓN DE INFORMACIÓN --&gt;
+        &lt;section class="info-artista"&gt;
+            &lt;h2&gt;📍 Información del Artista&lt;/h2&gt;
+            
+            &lt;div class="tarjetas-info"&gt;
+                &lt;div class="tarjeta"&gt;
+                    &lt;h3&gt;🎵 Géneros Musicales&lt;/h3&gt;
+                    &lt;ul class="lista-generos"&gt;
+                        &lt;li&gt;R&amp;B Alternativo&lt;/li&gt;
+                        &lt;li&gt;Lo-fi Hip Hop&lt;/li&gt;
+                        &lt;li&gt;Trip Hop&lt;/li&gt;
+                        &lt;li&gt;Indie Pop&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+
+                &lt;div class="tarjeta"&gt;
+                    &lt;h3&gt;🏆 Logros Principales&lt;/h3&gt;
+                    &lt;ul class="lista-logros"&gt;
+                        &lt;li&gt;Más de 1B reproducciones en Spotify&lt;/li&gt;
+                        &lt;li&gt;Top 10 en Billboard&lt;/li&gt;
+                        &lt;li&gt;Certificación Platino&lt;/li&gt;
+                        &lt;li&gt;Giras mundiales&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+
+                &lt;div class="tarjeta"&gt;
+                    &lt;h3&gt;📅 Datos Personales&lt;/h3&gt;
+                    &lt;ul class="lista-datos"&gt;
+                        &lt;li&gt;Nacimiento: 18 septiembre 1992&lt;/li&gt;
+                        &lt;li&gt;Nacionalidad: Japonés-Australiano&lt;/li&gt;
+                        &lt;li&gt;Debut musical: 2017&lt;/li&gt;
+                        &lt;li&gt;Discográfica: 88rising&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+
+        &lt;!-- SECCIÓN DE DISCOGRAFÍA --&gt;
+        &lt;section class="discografia"&gt;
+            &lt;h2&gt;💿 Discografía Principal&lt;/h2&gt;
+            
+            &lt;div class="album-destacado"&gt;
+                &lt;img src="nectar-album.jpg" alt="Álbum Nectar" class="portada-album"&gt;
+                &lt;div class="info-album"&gt;
+                    &lt;h3 class="titulo-album"&gt;NECTAR (2020)&lt;/h3&gt;
+                    &lt;p class="descripcion-album"&gt;
+                        Su segundo álbum de estudio que consolidó su carrera musical 
+                        con una mezcla perfecta de melancolía y producción moderna.
+                    &lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;!-- TABLA DE CANCIONES POPULARES --&gt;
+            &lt;h3&gt;🎶 Top 5 Canciones Más Populares&lt;/h3&gt;
+            &lt;div class="contenedor-tabla"&gt;
+                &lt;table class="tabla-canciones"&gt;
+                    &lt;caption&gt;Las canciones más escuchadas del artista&lt;/caption&gt;
+                    &lt;thead&gt;
+                        &lt;tr&gt;
+                            &lt;th&gt;#&lt;/th&gt;
+                            &lt;th&gt;Canción&lt;/th&gt;
+                            &lt;th&gt;Álbum&lt;/th&gt;
+                            &lt;th&gt;Año&lt;/th&gt;
+                            &lt;th&gt;Reproducciones&lt;/th&gt;
+                        &lt;/tr&gt;
+                    &lt;/thead&gt;
+                    &lt;tbody&gt;
+                        &lt;tr&gt;
+                            &lt;td&gt;1&lt;/td&gt;
+                            &lt;td&gt;Glimpse of Us&lt;/td&gt;
+                            &lt;td&gt;SMITHEREENS&lt;/td&gt;
+                            &lt;td&gt;2022&lt;/td&gt;
+                            &lt;td&gt;800M+&lt;/td&gt;
+                        &lt;/tr&gt;
+                        &lt;tr&gt;
+                            &lt;td&gt;2&lt;/td&gt;
+                            &lt;td&gt;Slow Dancing in the Dark&lt;/td&gt;
+                            &lt;td&gt;BALLADS 1&lt;/td&gt;
+                            &lt;td&gt;2018&lt;/td&gt;
+                            &lt;td&gt;600M+&lt;/td&gt;
+                        &lt;/tr&gt;
+                        &lt;tr&gt;
+                            &lt;td&gt;3&lt;/td&gt;
+                            &lt;td&gt;Sanctuary&lt;/td&gt;
+                            &lt;td&gt;Nectar&lt;/td&gt;
+                            &lt;td&gt;2020&lt;/td&gt;
+                            &lt;td&gt;400M+&lt;/td&gt;
+                        &lt;/tr&gt;
+                        &lt;tr&gt;
+                            &lt;td&gt;4&lt;/td&gt;
+                            &lt;td&gt;Yeah Right&lt;/td&gt;
+                            &lt;td&gt;BALLADS 1&lt;/td&gt;
+                            &lt;td&gt;2018&lt;/td&gt;
+                            &lt;td&gt;300M+&lt;/td&gt;
+                        &lt;/tr&gt;
+                        &lt;tr&gt;
+                            &lt;td&gt;5&lt;/td&gt;
+                            &lt;td&gt;Gimme Love&lt;/td&gt;
+                            &lt;td&gt;Nectar&lt;/td&gt;
+                            &lt;td&gt;2020&lt;/td&gt;
+                            &lt;td&gt;250M+&lt;/td&gt;
+                        &lt;/tr&gt;
+                    &lt;/tbody&gt;
+                &lt;/table&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+
+        &lt;!-- SECCIÓN CON CSS EN LÍNEA (EJEMPLO) --&gt;
+        &lt;section style="background: linear-gradient(45deg, #667eea, #764ba2); padding: 40px; margin: 30px 0; text-align: center; border-radius: 15px;"&gt;
+            &lt;h2 style="color: white; font-size: 2.5em; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);"&gt;
+                🌟 ¡Tu Turno de Personalizar!
+            &lt;/h2&gt;
+            &lt;p style="color: #f1f1f1; font-size: 1.2em; max-width: 600px; margin: 0 auto;"&gt;
+                Cambia este contenido por tu tema favorito. Aplica todo lo que has aprendido 
+                y crea algo increíble. ¡Este es tu momento de brillar!
+            &lt;/p&gt;
+        &lt;/section&gt;
+    &lt;/main&gt;
+
+    &lt;footer&gt;
+        &lt;p&gt;Página creada como desafío de CSS | Tu Nombre © 2025&lt;/p&gt;
+    &lt;/footer&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+      </div>
+
+      <div class="instrucciones-desafio">
+        <h3>🚀 Instrucciones del Desafío</h3>
+        <ol>
+          <li><strong>Personaliza el contenido:</strong> Cambia Joji por tu tema favorito (artista, deporte, videojuego, etc.)</li>
+          <li><strong>Busca imágenes:</strong> Fotos relacionadas con tu tema elegido</li>
+          <li><strong>Crea tu CSS externo:</strong> <code>estilos-artista.css</code> con la mayoría de estilos</li>
+          <li><strong>Usa CSS interno:</strong> En <code>&lt;style&gt;</code> para algunos elementos específicos</li>
+          <li><strong>Mantén CSS en línea:</strong> La sección ya tiene algunos ejemplos</li>
+          <li><strong>Aplica TODAS las propiedades:</strong> Usa el checklist como guía</li>
+          <li><strong>Haz que se vea profesional:</strong> Colores que combinen, tipografía legible, espaciado equilibrado</li>
+          <li><strong>Responsive:</strong> Que la tabla funcione bien en móviles</li>
+        </ol>
+      </div>
+
+
+
+    </section>
+  </main>
+
+  <footer>
+    <p>Code Cats Studio © 2025</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS — 4. Listas y tablas</title>
+  <link rel="stylesheet" href="../../styles/base_teoria.css">
+  <link rel="stylesheet" href="../../styles/css/base_css.css">
+</head>
+<body>
+
+  <header>
+    <h1>4. Listas y tablas</h1>
+    <p>Aprende a estilizar listas y crear tablas responsive</p>
+  </header>
+
+  <nav>
+    <a href="../../index.html"><img src="../../images/home.gif" alt="Inicio">Inicio</a>
+    <a href="#contenido"><img src="../../images/libro.png" alt="Contenido">Contenido</a>
+    <a href="../../pages/ejercicio4.html"><img src="../../images/code.gif" alt="Ejercicio">Ejercicio</a>
+  </nav>
+
+  <main id="contenido">
+    <section>
+      <h2>Estilización de listas y tablas</h2>
+
+      <p>Esta sección cubre todas las propiedades CSS para personalizar listas y crear tablas atractivas y responsive. Desde viñetas personalizadas hasta tablas que se adaptan a cualquier dispositivo.</p>
+
+      <!-- SECCIÓN DE LISTAS -->
+      <h2>LISTAS CSS</h2>
+
+      <h3>4.1 list-style-type</h3>
+      <p>La propiedad <code>list-style-type</code> controla el tipo de marcador (viñeta o número) que aparece junto a cada elemento de lista.</p>
+      <p><strong>Valores para listas no ordenadas (ul):</strong></p>
+      <ul>
+        <li><strong>disc:</strong> círculo relleno (predeterminado para ul)</li>
+        <li><strong>circle:</strong> círculo vacío</li>
+        <li><strong>square:</strong> cuadrado relleno</li>
+        <li><strong>none:</strong> sin marcador</li>
+      </ul>
+      <p><strong>Valores para listas ordenadas (ol):</strong></p>
+      <ul>
+        <li><strong>decimal:</strong> números decimales (1, 2, 3...)</li>
+        <li><strong>decimal-leading-zero:</strong> números con cero inicial (01, 02, 03...)</li>
+        <li><strong>lower-roman:</strong> números romanos minúsculas (i, ii, iii...)</li>
+        <li><strong>upper-roman:</strong> números romanos mayúsculas (I, II, III...)</li>
+        <li><strong>lower-alpha/lower-latin:</strong> letras minúsculas (a, b, c...)</li>
+        <li><strong>upper-alpha/upper-latin:</strong> letras mayúsculas (A, B, C...)</li>
+      </ul>
+
+      <p><strong>Ejemplo interactivo — experimenta con diferentes marcadores:</strong></p>
+      
+      <p><strong>HTML:</strong></p>
+      <pre><code>&lt;ul class="lista-demo"&gt;
+  &lt;li&gt;Primer elemento&lt;/li&gt;
+  &lt;li&gt;Segundo elemento&lt;/li&gt;
+  &lt;li&gt;Tercer elemento&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
+      <p><strong>CSS:</strong></p>
+      <pre><code>.lista-demo {
+  list-style-type: square; /* Prueba: disc, circle, none, decimal, upper-roman */
+  background: #f8f9fa;
+  padding: 20px;
+  border-left: 4px solid #007bff;
+}
+</code></pre>
+
+      <h3>4.2 list-style-position</h3>
+      <p>La propiedad <code>list-style-position</code> controla la posición del marcador respecto al contenido del elemento de lista.</p>
+      <p><strong>Valores de list-style-position:</strong></p>
+      <ul>
+        <li><strong>outside:</strong> marcador fuera del área de contenido (predeterminado)</li>
+        <li><strong>inside:</strong> marcador dentro del área de contenido</li>
+      </ul>
+
+      <p><strong>Ejemplo interactivo — compara las posiciones:</strong></p>
+      
+      <p><strong>HTML:</strong></p>
+      <pre><code>&lt;ul class="posicion-demo"&gt;
+  &lt;li&gt;Este es un texto largo que se extiende por varias líneas para mostrar la diferencia entre inside y outside&lt;/li&gt;
+  &lt;li&gt;Otro elemento de lista largo&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
+      <p><strong>CSS:</strong></p>
+      <pre><code>.posicion-demo {
+  list-style-position: inside; /* Prueba: outside, inside */
+  background: #e8f5e8;
+  padding: 15px;
+  border: 2px solid #28a745;
+  width: 300px;
+}
+</code></pre>
+
+      <h3>4.3 list-style-image</h3>
+      <p>La propiedad <code>list-style-image</code> permite usar una imagen personalizada como marcador de lista.</p>
+      <p><strong>Valores de list-style-image:</strong></p>
+      <ul>
+        <li><strong>none:</strong> sin imagen personalizada (predeterminado)</li>
+        <li><strong>url("ruta/imagen.png"):</strong> imagen personalizada</li>
+      </ul>
+      <p><strong>Nota:</strong> Si la imagen no se puede cargar, se usará <code>list-style-type</code> como respaldo.</p>
+
+      <p><strong>Ejemplo interactivo — imagen personalizada como viñeta:</strong></p>
+      
+      <p><strong>HTML:</strong></p>
+      <pre><code>&lt;ul class="imagen-demo"&gt;
+  &lt;li&gt;Elemento con imagen personalizada&lt;/li&gt;
+  &lt;li&gt;Otro elemento de lista&lt;/li&gt;
+  &lt;li&gt;Tercer elemento&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
+      <p><strong>CSS:</strong></p>
+      <pre><code>.imagen-demo {
+  list-style-image: url("../../images/bullet.png"); /* Cambia por tu imagen */
+  list-style-type: disc; /* Respaldo si no carga la imagen */
+  background: #fff3cd;
+  padding: 20px;
+  border: 2px solid #ffc107;
+}
+</code></pre>
+
+      <h3>4.4 list-style (atajo)</h3>
+      <p>La propiedad <code>list-style</code> es un atajo que combina type, position e image en una sola declaración.</p>
+      <p><strong>Sintaxis:</strong> <code>list-style: [type] [position] [image];</code></p>
+
+      <p><strong>Ejemplo interactivo — atajo completo:</strong></p>
+      
+      <p><strong>HTML:</strong></p>
+      <pre><code>&lt;ol class="atajo-demo"&gt;
+  &lt;li&gt;Primer paso del proceso&lt;/li&gt;
+  &lt;li&gt;Segundo paso importante&lt;/li&gt;
+  &lt;li&gt;Último paso&lt;/li&gt;
+&lt;/ol&gt;
+</code></pre>
+
+      <p><strong>CSS:</strong></p>
+      <pre><code>.atajo-demo {
+  list-style: upper-roman inside; /* Prueba: decimal outside, none */
+  background: #f0f8ff;
+  padding: 20px;
+  border-left: 5px solid #007acc;
+  font-weight: 500;
+}
+</code></pre>
+
+      <!-- SECCIÓN DE TABLAS -->
+      <h2>TABLAS CSS</h2>
+
+      <h3>4.5 border-collapse</h3>
+      <p>La propiedad <code>border-collapse</code> controla cómo se manejan los bordes entre las celdas de una tabla.</p>
+      <p><strong>Valores de border-collapse:</strong></p>
+      <ul>
+        <li><strong>separate:</strong> bordes separados (predeterminado) - cada celda tiene su propio borde</li>
+        <li><strong>collapse:</strong> bordes colapsados - los bordes adyacentes se combinan en uno</li>
+      </ul>
+
+      <p><strong>Ejemplo interactivo — compara bordes separados vs colapsados:</strong></p>
+      
+      <p><strong>HTML:</strong></p>
+      <pre><code>&lt;table class="tabla-bordes"&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Nombre&lt;/th&gt;
+    &lt;th&gt;Edad&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Ana&lt;/td&gt;
+    &lt;td&gt;25&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+</code></pre>
+
+      <p><strong>CSS:</strong></p>
+      <pre><code>.tabla-bordes {
+  border-collapse: collapse; /* Prueba: separate, collapse */
+  border: 2px solid #333;
+  width: 100%;
+}
+
+.tabla-bordes th, .tabla-bordes td {
+  border: 1px solid #666;
+  padding: 10px;
+  text-align: left;
+}
+</code></pre>
+
+      <h3>4.6 border-spacing</h3>
+      <p>La propiedad <code>border-spacing</code> define el espacio entre bordes de celdas cuando <code>border-collapse</code> es <code>separate</code>.</p>
+      <p><strong>Valores de border-spacing:</strong></p>
+      <ul>
+        <li><strong>Una longitud:</strong> <code>5px</code> (mismo espaciado horizontal y vertical)</li>
+        <li><strong>Dos longitudes:</strong> <code>10px 5px</code> (horizontal vertical)</li>
+      </ul>
+
+      <p><strong>Ejemplo interactivo — ajusta el espaciado entre celdas:</strong></p>
+      
+      <p><strong>HTML:</strong></p>
+      <pre><code>&lt;table class="tabla-espaciado"&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Celda 1&lt;/td&gt;
+    &lt;td&gt;Celda 2&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Celda 3&lt;/td&gt;
+    &lt;td&gt;Celda 4&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+</code></pre>
+
+      <p><strong>CSS:</strong></p>
+      <pre><code>.tabla-espaciado {
+  border-collapse: separate;
+  border-spacing: 10px 5px; /* Prueba: 0, 15px, 20px 10px */
+  background: #f8f9fa;
+}
+
+.tabla-espaciado td {
+  background: #e9ecef;
+  padding: 15px;
+  border: 1px solid #dee2e6;
+}
+</code></pre>
+
+      <h3>4.7 table-layout</h3>
+      <p>La propiedad <code>table-layout</code> controla el algoritmo usado para calcular el ancho de las columnas.</p>
+      <p><strong>Valores de table-layout:</strong></p>
+      <ul>
+        <li><strong>auto:</strong> ancho basado en el contenido (predeterminado)</li>
+        <li><strong>fixed:</strong> ancho basado en la primera fila, más predecible y rápido</li>
+      </ul>
+
+      <p><strong>Ejemplo interactivo — compara algoritmos de layout:</strong></p>
+      
+      <p><strong>HTML:</strong></p>
+      <pre><code>&lt;table class="tabla-layout"&gt;
+  &lt;tr&gt;
+    &lt;td style="width: 30%"&gt;30% ancho&lt;/td&gt;
+    &lt;td&gt;Contenido variable que puede ser muy largo&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+</code></pre>
+
+      <p><strong>CSS:</strong></p>
+      <pre><code>.tabla-layout {
+  table-layout: fixed; /* Prueba: auto, fixed */
+  width: 100%;
+  border-collapse: collapse;
+  border: 2px solid #007bff;
+}
+
+.tabla-layout td {
+  border: 1px solid #6c757d;
+  padding: 12px;
+  overflow: hidden;
+}
+</code></pre>
+
+      <h3>4.8 caption-side</h3>
+      <p>La propiedad <code>caption-side</code> especifica la posición del elemento <code>&lt;caption&gt;</code> de una tabla.</p>
+      <p><strong>Valores de caption-side:</strong></p>
+      <ul>
+        <li><strong>top:</strong> arriba de la tabla (predeterminado)</li>
+        <li><strong>bottom:</strong> debajo de la tabla</li>
+      </ul>
+
+      <p><strong>Ejemplo interactivo — posición del título:</strong></p>
+      
+      <p><strong>HTML:</strong></p>
+      <pre><code>&lt;table class="tabla-caption"&gt;
+  &lt;caption&gt;Título de la tabla&lt;/caption&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Columna 1&lt;/th&gt;
+    &lt;th&gt;Columna 2&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Dato 1&lt;/td&gt;
+    &lt;td&gt;Dato 2&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+</code></pre>
+
+      <p><strong>CSS:</strong></p>
+      <pre><code>.tabla-caption {
+  caption-side: bottom; /* Prueba: top, bottom */
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.tabla-caption caption {
+  font-weight: bold;
+  padding: 10px;
+  background: #f8f9fa;
+}
+
+.tabla-caption th, .tabla-caption td {
+  border: 1px solid #dee2e6;
+  padding: 10px;
+}
+</code></pre>
+
+      <h3>4.9 Tablas Responsive</h3>
+      <p>Para hacer tablas responsive, usamos principalmente <code>overflow</code> y técnicas de diseño adaptativo.</p>
+      <p><strong>Técnicas principales:</strong></p>
+      <ul>
+        <li><strong>overflow: auto;</strong> permite scroll horizontal cuando la tabla es muy ancha</li>
+        <li><strong>overflow: hidden;</strong> oculta contenido que desborda</li>
+        <li><strong>Media queries:</strong> cambian el diseño en pantallas pequeñas</li>
+        <li><strong>display: block;</strong> convierte tabla en elementos de bloque para móviles</li>
+      </ul>
+
+      <p><strong>Ejemplo interactivo — tabla con scroll horizontal:</strong></p>
+      
+      <p><strong>HTML:</strong></p>
+      <pre><code>&lt;div class="tabla-responsive"&gt;
+  &lt;table class="tabla-ancha"&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Nombre&lt;/th&gt;
+      &lt;th&gt;Apellido&lt;/th&gt;
+      &lt;th&gt;Email&lt;/th&gt;
+      &lt;th&gt;Teléfono&lt;/th&gt;
+      &lt;th&gt;Ciudad&lt;/th&gt;
+      &lt;th&gt;País&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ana&lt;/td&gt;
+      &lt;td&gt;García&lt;/td&gt;
+      &lt;td&gt;ana@email.com&lt;/td&gt;
+      &lt;td&gt;+34 600 123 456&lt;/td&gt;
+      &lt;td&gt;Madrid&lt;/td&gt;
+      &lt;td&gt;España&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/div&gt;
+</code></pre>
+
+      <p><strong>CSS:</strong></p>
+      <pre><code>.tabla-responsive {
+  overflow-x: auto; /* Prueba: hidden, scroll, auto */
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+}
+
+.tabla-ancha {
+  width: 100%;
+  min-width: 600px; /* Fuerza scroll en pantallas pequeñas */
+  border-collapse: collapse;
+}
+
+.tabla-ancha th {
+  background: #007bff;
+  color: white;
+  padding: 12px;
+  white-space: nowrap; /* Evita que se rompa el texto */
+}
+
+.tabla-ancha td {
+  padding: 12px;
+  border-bottom: 1px solid #dee2e6;
+  white-space: nowrap;
+}
+</code></pre>
+
+    </section>
+  </main>
+
+  <footer>
+    <p>Code Cats Studio © 2025</p>
+  </footer>
+
+</body>
+</html>

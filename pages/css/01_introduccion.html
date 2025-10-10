@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introducción y Conceptos Básicos de CSS | Code Cats Studio</title>
+  <link rel="stylesheet" type="text/css" href="../../styles/base_teoria.css">
+  <link rel="stylesheet" href="../../styles/css/base_css.css">
+  <link rel="icon" type="image/png" href="../../images/icon.jpg">
+</head>
+<body>
+  <header>
+    <img src="../../images/logo1v.jpg" alt="Logo Code Cats Studio">
+    <h1>Introducción y Conceptos Básicos de CSS</h1>
+    <p>Material de apoyo: conceptos esenciales para empezar a usar CSS.</p>
+  </header>
+
+  <nav>
+    <a href="../../index.html"><img src="../../images/home.gif" alt="Inicio">Inicio</a>
+    <a href="#contenido"><img src="../../images/libro.png" alt="Contenido">Contenido</a>
+    <a href="../../pages/ejercicio2.html"><img src="../../images/code.gif" alt="Ejercicio">Ejercicio</a>
+  </nav>
+
+  <main id="contenido">
+    <section>
+      <h2>¿Por qué usar CSS?</h2>
+      <p>CSS (Cascading Style Sheets) es el lenguaje que usamos para dar estilo y presentación a los documentos HTML. A continuación sus principales ventajas:</p>
+      <ul>
+        <li><strong>Separación de contenido y presentación:</strong> HTML se encarga de la estructura y CSS de la apariencia.</li>
+        <li><strong>Consistencia y eficiencia:</strong> Permite definir un estilo una vez y aplicarlo a múltiples páginas, ahorrando tiempo y esfuerzo.</li>
+        <li><strong>Mayor control creativo:</strong> Ofrece un control mucho más preciso sobre el diseño, la tipografía y los colores que el HTML por sí solo.</li>
+      </ul>
+
+      <h2>Sintaxis y Comentarios</h2>
+      <p>Una regla de CSS consta de tres partes: un <em>selector</em>, una <em>propiedad</em> y un <em>valor</em>. Los comentarios se escriben con <code>/* ... */</code> y sirven para documentar el código.</p>
+
+      <pre><code>/* Esto es un comentario: ayuda a explicar el código */
+p {
+  color: blue; /* Propiedad: color, Valor: blue */
+  font-size: 16px; /* Propiedad: font-size, Valor: 16px */
+}
+</code></pre>
+
+      <p><strong>Explicación:</strong></p>
+      <ul>
+        <li><strong>Selector:</strong> <code>p</code> — selecciona todos los elementos &lt;p&gt; del documento.</li>
+        <li><strong>Propiedades:</strong> nombres como <code>color</code> o <code>font-size</code> que definen qué aspecto cambiar.</li>
+        <li><strong>Valores:</strong> asignaciones como <code>blue</code> o <code>16px</code> que indican cómo aplicar la propiedad.</li>
+        <li><strong>Comentarios:</strong> <code>/* ... */</code> — no se ejecutan, solo sirven de guía para desarrolladores.</li>
+      </ul>
+
+      <h2>Las 3 Formas de Usar CSS</h2>
+
+      <h3>1. CSS Externo</h3>
+      <p>Es el método más común y recomendado: los estilos se escriben en un archivo separado (<code>.css</code>) y se enlazan desde el HTML.</p>
+
+      <p><strong>Ejemplo HTML (index.html):</strong></p>
+      <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Mi Página con CSS Externo&lt;/title&gt;
+  &lt;link rel="stylesheet" href="estilos.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Este título es azul&lt;/h1&gt;
+  &lt;p&gt;Este párrafo también es azul.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+      <p><strong>Ejemplo CSS (estilos.css):</strong></p>
+      <pre><code>body {
+  font-family: Arial, sans-serif;
+}
+
+h1, p {
+  color: blue;
+}
+</code></pre>
+
+      <h3>2. CSS Interno</h3>
+      <p>Se usa para aplicar estilos a una única página, colocando el CSS dentro de una etiqueta <code>&lt;style&gt;</code> en el <code>&lt;head&gt;</code>.</p>
+
+      <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Mi Página con CSS Interno&lt;/title&gt;
+  &lt;style&gt;
+    body {
+      background-color: #f0f0f0;
+    }
+    h1 {
+      color: green;
+      text-align: center;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Este título es verde y centrado&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+      <h3>3. CSS en Línea</h3>
+      <p>Aplica estilos directamente a un elemento usando el atributo <code>style</code>. Debe usarse con moderación porque dificulta el mantenimiento.</p>
+
+      <pre><code>&lt;p style="color: red; font-size: 20px;"&gt;Este párrafo es rojo y tiene una fuente grande.&lt;/p&gt;
+</code></pre>
+
+      <h2>Colores en CSS</h2>
+      <p>Existen varias formas de definir colores. Las más importantes son:</p>
+      <ul>
+        <li><strong>Por nombre:</strong> colores predefinidos como <code>red</code>, <code>blue</code>, <code>lightgray</code>.</li>
+        <li><strong>RGB:</strong> <code>rgb(255, 0, 0)</code> — intensidad de rojo, verde y azul (0–255).</li>
+        <li><strong>Hexadecimal (HEX):</strong> <code>#FF0000</code> — representación hexadecimal de RGB.</li>
+        <li><strong>HSL:</strong> <code>hsl(0, 100%, 50%)</code> — matiz, saturación y luminosidad.</li>
+      </ul>
+
+  <h3>Ejemplo aplicado (CSS)</h3>
+  <p>A continuación solo el fragmento CSS para usar en la demo (para enseñar):</p>
+  <pre><code>/* Ejemplos de colores (nombre, RGB, HEX, HSL) */
+.swatch.name { background: blue; }
+.swatch.rgb  { background: rgb(255,165,0); } 
+.swatch.hex  { background: #2ecc71; }
+.swatch.hsl  { background: hsl(200, 80%, 50%); }
+</code></pre>
+
+    </section>
+  </main>
+
+  <footer>
+    <p>Code Cats Studio © 2025 | Hecho con ❤️ y muchas ganas de aprender</p>
+  </footer>
+</body>
+</html>

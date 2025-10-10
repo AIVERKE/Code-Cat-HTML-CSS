@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio CSS 04: Listas y Tablas Estilizadas | Code Cats Studio</title>
+  <link rel="stylesheet" type="text/css" href="../../styles/base_teoria.css">
+  <link rel="stylesheet" href="../../styles/css/base_css.css">
+  <link rel="icon" type="image/png" href="../../images/icon.jpg">
+</head>
+<body>
+
+  <header>
+    <img src="../../images/logo1v.jpg" alt="Logo Code Cats Studio">
+    <h1>Ejercicio CSS 04</h1>
+    <p>Listas y Tablas Estilizadas</p>
+  </header>
+
+  <nav>
+    <a href="../../index.html"><img src="../../images/home.gif" alt="Inicio">Inicio</a>
+    <a href="04_listas_y_tablas.html"><img src="../../images/libro.png" alt="Teoría">Teoría CSS</a>
+    <a href="#ejercicio"><img src="../../images/code.gif" alt="Ejercicio">Ejercicio</a>
+  </nav>
+
+  <main id="ejercicio">
+    <section>
+      <h2>🎯 Ejercicio: Listas y Tablas Estilizadas</h2>
+
+      <div class="objetivo">
+        <h3>📋 Objetivo</h3>
+        <p>Crear una página con <strong>listas estilizadas</strong> y <strong>tablas responsive</strong> aplicando todas las propiedades aprendidas. Practicarás diferentes tipos de marcadores, estilos de bordes, espaciado y técnicas de responsividad.</p>
+      </div>
+
+      <div class="instrucciones">
+        <h3>📝 Instrucciones</h3>
+        <ol>
+          <li><strong>Copia la plantilla HTML</strong> que se proporciona abajo</li>
+          <li><strong>Crea un archivo CSS</strong> llamado <code>listas-tablas.css</code></li>
+          <li><strong>Personaliza el contenido:</strong> Cambia los elementos de las listas y datos de las tablas por tus propios intereses</li>
+          <li><strong>Aplica propiedades de listas:</strong></li>
+          <ul>
+            <li><strong>list-style-type:</strong> Diferentes marcadores para cada lista</li> 
+            <li><strong>list-style-position:</strong> Experimenta con inside/outside</li>
+            <li><strong>list-style-image:</strong> Usa imágenes personalizadas (opcional)</li>
+          </ul>
+          <li><strong>Aplica propiedades de tablas:</strong></li>
+          <ul>
+            <li><strong>border-collapse:</strong> Controla los bordes</li>
+            <li><strong>border-spacing:</strong> Espaciado entre celdas</li>
+            <li><strong>table-layout:</strong> fixed o auto</li>
+            <li><strong>caption-side:</strong> Posición del título</li>
+          </ul>
+          <li><strong>Haz la tabla responsive</strong> con overflow</li>
+          <li><strong>¡Sé creativo!</strong> Usa colores y estilos que te gusten</li>
+        </ol>
+      </div>
+
+      <div class="recordatorio">
+        <h3>💡 Recordatorio de Propiedades</h3>
+        
+        <h4>📋 Listas:</h4>
+        <ul>
+          <li><strong>list-style-type:</strong> <code>disc</code>, <code>square</code>, <code>decimal</code>, <code>upper-roman</code>, <code>none</code></li>
+          <li><strong>list-style-position:</strong> <code>outside</code>, <code>inside</code></li>
+          <li><strong>list-style-image:</strong> <code>url("imagen.png")</code></li>
+          <li><strong>list-style:</strong> Atajo para las anteriores</li>
+        </ul>
+        
+        <h4>📊 Tablas:</h4>
+        <ul>
+          <li><strong>border-collapse:</strong> <code>separate</code>, <code>collapse</code></li>
+          <li><strong>border-spacing:</strong> <code>5px</code>, <code>10px 5px</code></li>
+          <li><strong>table-layout:</strong> <code>auto</code>, <code>fixed</code></li>
+          <li><strong>caption-side:</strong> <code>top</code>, <code>bottom</code></li>
+          <li><strong>overflow:</strong> <code>auto</code>, <code>hidden</code>, <code>scroll</code></li>
+        </ul>
+      </div>
+
+      <div class="plantilla">
+        <h3>📄 Plantilla HTML</h3>
+        <p><strong>Copia este código y guárdalo como <code>ejercicio04.html</code>:</strong></p>
+        
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Ejercicio 04 - Listas y Tablas&lt;/title&gt;
+  &lt;link rel="stylesheet" href="listas-tablas.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header&gt;
+    &lt;h1&gt;Mis Listas y Tablas Favoritas&lt;/h1&gt;
+    &lt;p&gt;Una colección personal organizada&lt;/p&gt;
+  &lt;/header&gt;
+
+  &lt;main&gt;
+    &lt;section class="seccion-listas"&gt;
+      &lt;h2&gt;🍕 Mis Comidas Favoritas&lt;/h2&gt;
+      &lt;ul class="lista-comidas"&gt;
+        &lt;li&gt;Pizza Margarita&lt;/li&gt;
+        &lt;li&gt;Tacos al Pastor&lt;/li&gt;
+        &lt;li&gt;Sushi de Salmón&lt;/li&gt;
+        &lt;li&gt;Hamburguesa Clásica&lt;/li&gt;
+        &lt;li&gt;Pasta Alfredo&lt;/li&gt;
+      &lt;/ul&gt;
+
+      &lt;h2&gt;🎯 Pasos para Cocinar Pasta&lt;/h2&gt;
+      &lt;ol class="lista-pasos"&gt;
+        &lt;li&gt;Hervir agua con sal&lt;/li&gt;
+        &lt;li&gt;Añadir la pasta al agua hirviendo&lt;/li&gt;
+        &lt;li&gt;Cocinar según tiempo del paquete&lt;/li&gt;
+        &lt;li&gt;Escurrir la pasta&lt;/li&gt;
+        &lt;li&gt;Servir con tu salsa favorita&lt;/li&gt;
+      &lt;/ol&gt;
+
+      &lt;h2&gt;🎵 Géneros Musicales que me Gustan&lt;/h2&gt;
+      &lt;ul class="lista-musica"&gt;
+        &lt;li&gt;Rock Clásico&lt;/li&gt;
+        &lt;li&gt;Pop Latino&lt;/li&gt;
+        &lt;li&gt;Jazz&lt;/li&gt;
+        &lt;li&gt;Electrónica&lt;/li&gt;
+        &lt;li&gt;Reggaeton&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/section&gt;
+
+    &lt;section class="seccion-tablas"&gt;
+      &lt;h2&gt;⚽ Equipos de Fútbol y sus Logros&lt;/h2&gt;
+      
+      &lt;div class="contenedor-tabla"&gt;
+        &lt;table class="tabla-equipos"&gt;
+          &lt;caption&gt;Estadísticas de Equipos Favoritos - Temporada 2025&lt;/caption&gt;
+          &lt;thead&gt;
+            &lt;tr&gt;
+              &lt;th&gt;Equipo&lt;/th&gt;
+              &lt;th&gt;País&lt;/th&gt;
+              &lt;th&gt;Títulos Liga&lt;/th&gt;
+              &lt;th&gt;Copas Internacionales&lt;/th&gt;
+              &lt;th&gt;Año Fundación&lt;/th&gt;
+              &lt;th&gt;Estadio&lt;/th&gt;
+            &lt;/tr&gt;
+          &lt;/thead&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Real Madrid&lt;/td&gt;
+              &lt;td&gt;España&lt;/td&gt;
+              &lt;td&gt;35&lt;/td&gt;
+              &lt;td&gt;15&lt;/td&gt;
+              &lt;td&gt;1902&lt;/td&gt;
+              &lt;td&gt;Santiago Bernabéu&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Barcelona&lt;/td&gt;
+              &lt;td&gt;España&lt;/td&gt;
+              &lt;td&gt;27&lt;/td&gt;
+              &lt;td&gt;5&lt;/td&gt;
+              &lt;td&gt;1899&lt;/td&gt;
+              &lt;td&gt;Camp Nou&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Manchester United&lt;/td&gt;
+              &lt;td&gt;Inglaterra&lt;/td&gt;
+              &lt;td&gt;20&lt;/td&gt;
+              &lt;td&gt;3&lt;/td&gt;
+              &lt;td&gt;1878&lt;/td&gt;
+              &lt;td&gt;Old Trafford&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Bayern Múnich&lt;/td&gt;
+              &lt;td&gt;Alemania&lt;/td&gt;
+              &lt;td&gt;32&lt;/td&gt;
+              &lt;td&gt;6&lt;/td&gt;
+              &lt;td&gt;1900&lt;/td&gt;
+              &lt;td&gt;Allianz Arena&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Juventus&lt;/td&gt;
+              &lt;td&gt;Italia&lt;/td&gt;
+              &lt;td&gt;36&lt;/td&gt;
+              &lt;td&gt;2&lt;/td&gt;
+              &lt;td&gt;1897&lt;/td&gt;
+              &lt;td&gt;Allianz Stadium&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/div&gt;
+
+      &lt;h2&gt;🎮 Mis Videojuegos Favoritos&lt;/h2&gt;
+      
+      &lt;div class="contenedor-tabla"&gt;
+        &lt;table class="tabla-juegos"&gt;
+          &lt;caption&gt;Top 5 Videojuegos Personales&lt;/caption&gt;
+          &lt;thead&gt;
+            &lt;tr&gt;
+              &lt;th&gt;Juego&lt;/th&gt;
+              &lt;th&gt;Plataforma&lt;/th&gt;
+              &lt;th&gt;Género&lt;/th&gt;
+              &lt;th&gt;Año&lt;/th&gt;
+              &lt;th&gt;Calificación&lt;/th&gt;
+            &lt;/tr&gt;
+          &lt;/thead&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;The Legend of Zelda&lt;/td&gt;
+              &lt;td&gt;Nintendo Switch&lt;/td&gt;
+              &lt;td&gt;Aventura&lt;/td&gt;
+              &lt;td&gt;2017&lt;/td&gt;
+              &lt;td&gt;10/10&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td&gt;FIFA 25&lt;/td&gt;
+              &lt;td&gt;PlayStation 5&lt;/td&gt;
+              &lt;td&gt;Deportes&lt;/td&gt;
+              &lt;td&gt;2024&lt;/td&gt;
+              &lt;td&gt;9/10&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Minecraft&lt;/td&gt;
+              &lt;td&gt;PC&lt;/td&gt;
+              &lt;td&gt;Sandbox&lt;/td&gt;
+              &lt;td&gt;2011&lt;/td&gt;
+              &lt;td&gt;9/10&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+  &lt;/main&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+      </div>
+
+      <div class="ideas-personalizacion">
+        <h3>🎨 Ideas para Personalizar</h3>
+        
+        <h4>📋 Para las Listas:</h4>
+        <ul>
+          <li><strong>Cambia los temas:</strong> Películas, libros, hobbies, lugares para visitar</li>
+          <li><strong>Usa diferentes marcadores:</strong> círculos, cuadrados, números romanos</li>
+          <li><strong>Experimenta con colores:</strong> Fondos, bordes, hover effects</li>
+          <li><strong>Añade iconos:</strong> Emojis o imágenes pequeñas como viñetas</li>
+        </ul>
+
+        <h4>📊 Para las Tablas:</h4>
+        <ul>
+          <li><strong>Cambia los datos:</strong> Países visitados, libros leídos, series favoritas</li>
+          <li><strong>Prueba diferentes estilos:</strong> Bordes, espaciado, colores alternados</li>
+          <li><strong>Haz hover effects:</strong> Cambios de color al pasar el mouse</li>
+          <li><strong>Ajusta la responsividad:</strong> Scroll horizontal en móviles</li>
+        </ul>
+
+        <h4>🌟 Efectos Creativos:</h4>
+        <ul>
+          <li><strong>Zebra striping:</strong> Filas alternadas con diferentes colores</li>
+          <li><strong>Sombras:</strong> Box-shadow en tablas y listas</li>
+          <li><strong>Transiciones:</strong> Efectos suaves en hover</li>
+          <li><strong>Bordes redondeados:</strong> Border-radius para esquinas suaves</li>
+        </ul>
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    <p>Code Cats Studio © 2025</p>
+  </footer>
+
+</body>
+</html>

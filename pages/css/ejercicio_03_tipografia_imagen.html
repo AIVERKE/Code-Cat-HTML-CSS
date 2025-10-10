@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio CSS 03: Tipografía y Efectos de Texto | Code Cats Studio</title>
+  <link rel="stylesheet" type="text/css" href="../../styles/base_teoria.css">
+  <link rel="stylesheet" href="../../styles/css/base_css.css">
+  <link rel="icon" type="image/png" href="../../images/icon.jpg">
+</head>
+<body>
+
+  <header>
+    <img src="../../images/logo1v.jpg" alt="Logo Code Cats Studio">
+    <h1>Ejercicio CSS 03</h1>
+    <p>Tipografía y Efectos de Texto</p>
+  </header>
+
+  <nav>
+    <a href="../../index.html"><img src="../../images/home.gif" alt="Inicio">Inicio</a>
+    <a href="03_texto_tipografia.html"><img src="../../images/libro.png" alt="Teoría">Teoría CSS</a>
+    <a href="#ejercicio"><img src="../../images/code.gif" alt="Ejercicio">Ejercicio</a>
+  </nav>
+
+  <main id="ejercicio">
+    <section>
+      <h2>🎯 Ejercicio: Tipografía y Efectos de Texto</h2>
+
+      <div class="objetivo">
+        <h3>📋 Objetivo</h3>
+        <p>Combinar el <strong>marco de imagen del ejercicio anterior</strong> con <strong>propiedades de tipografía</strong> para crear títulos atractivos y descripciones estilizadas. Aplicarás efectos de texto como sombras, transformaciones y diferentes fuentes para hacer tu galería más profesional.</p>
+      </div>
+
+      <div class="instrucciones">
+        <h3>📝 Instrucciones</h3>
+        <ol>
+          <li><strong>Usa tu proyecto del ejercicio anterior</strong> como base (el marco de imagen)</li>
+          <li><strong>Añade títulos y descripciones</strong> a cada imagen siguiendo la plantilla</li>
+          <li><strong>Aplica propiedades de tipografía:</strong></li>
+          <ul>
+            <li><strong>font-family:</strong> Cambia la fuente del título y descripción</li> 
+            <li><strong>font-size:</strong> Diferentes tamaños para título y descripción</li>
+            <li><strong>font-weight:</strong> Peso de fuente para crear jerarquía</li>
+            <li><strong>text-align:</strong> Alineación del texto</li>
+            <li><strong>text-transform:</strong> Mayúsculas, minúsculas o capitalización</li>
+            <li><strong>text-shadow:</strong> Sombras creativas en los títulos</li>
+            <li><strong>color:</strong> Colores diferentes para título y descripción</li>
+            <li><strong>line-height:</strong> Espaciado entre líneas</li>
+          </ul>
+          <li><strong>Experimenta</strong> con combinaciones creativas</li>
+          <li><strong>¡Haz que destaque!</strong> Usa efectos llamativos pero legibles</li>
+        </ol>
+      </div>
+
+      <div class="recordatorio">
+        <h3>💡 Recordatorio de Propiedades de Texto</h3>
+        <ul>
+          <li><strong>font-family:</strong> <code>"Arial", sans-serif</code> - Tipo de fuente</li>
+          <li><strong>font-size:</strong> <code>24px</code>, <code>1.5em</code> - Tamaño del texto</li>
+          <li><strong>font-weight:</strong> <code>bold</code>, <code>300</code>, <code>700</code> - Grosor</li>
+          <li><strong>text-align:</strong> <code>center</code>, <code>left</code>, <code>right</code> - Alineación</li>
+          <li><strong>text-transform:</strong> <code>uppercase</code>, <code>capitalize</code> - Transformación</li>
+          <li><strong>text-shadow:</strong> <code>2px 2px 4px black</code> - Sombra de texto</li>
+          <li><strong>color:</strong> <code>#333</code>, <code>rgb(255,0,0)</code> - Color del texto</li>
+          <li><strong>line-height:</strong> <code>1.5</code>, <code>30px</code> - Altura de línea</li>
+        </ul>
+      </div>
+
+      <div class="plantilla">
+        <h3>📄 Plantilla HTML</h3>
+        <p><strong>Modifica tu ejercicio anterior con esta estructura o copia este código como <code>ejercicio03.html</code>:</strong></p>
+        
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Ejercicio 03 - Tipografía en Galería&lt;/title&gt;
+  &lt;link rel="stylesheet" href="galeria-tipografia.css"&gt;
+  &lt;!-- Opcional: Google Fonts para fuentes especiales --&gt;
+  &lt;link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=Roboto:wght@300;400;500&amp;display=swap" rel="stylesheet"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header class="encabezado-principal"&gt;
+    &lt;h1 class="titulo-principal"&gt;Mi Galería Fotográfica&lt;/h1&gt;
+    &lt;p class="subtitulo"&gt;Una colección de momentos especiales&lt;/p&gt;
+  &lt;/header&gt;
+  
+  &lt;div class="contenedor-principal"&gt;
+    
+    &lt;article class="marco-imagen"&gt;
+      &lt;img src="imagen1.jpg" alt="Primera imagen" class="imagen-principal"&gt;
+      &lt;h2 class="titulo-imagen"&gt;Aventura en la Montaña&lt;/h2&gt;
+      &lt;p class="descripcion-imagen"&gt;
+        Un hermoso amanecer desde la cima de la montaña más alta de la región. 
+        La vista panorámica nos regaló colores únicos que nunca olvidaremos.
+      &lt;/p&gt;
+      &lt;span class="etiqueta-fecha"&gt;Octubre 2025&lt;/span&gt;
+    &lt;/article&gt;
+    
+    &lt;article class="marco-imagen"&gt;
+      &lt;img src="imagen2.jpg" alt="Segunda imagen" class="imagen-principal"&gt;
+      &lt;h2 class="titulo-imagen"&gt;Momento en Familia&lt;/h2&gt;
+      &lt;p class="descripcion-imagen"&gt;
+        Una reunión familiar llena de risas y buenos recuerdos. 
+        Estos momentos son los que realmente importan en la vida.
+      &lt;/p&gt;
+      &lt;span class="etiqueta-fecha"&gt;Septiembre 2025&lt;/span&gt;
+    &lt;/article&gt;
+    
+    &lt;article class="marco-imagen"&gt;
+      &lt;img src="imagen3.jpg" alt="Tercera imagen" class="imagen-principal"&gt;
+      &lt;h2 class="titulo-imagen"&gt;Creatividad en Acción&lt;/h2&gt;
+      &lt;p class="descripcion-imagen"&gt;
+        Un proyecto personal que representó horas de dedicación y creatividad. 
+        El resultado final superó todas nuestras expectativas.
+      &lt;/p&gt;
+      &lt;span class="etiqueta-fecha"&gt;Agosto 2025&lt;/span&gt;
+    &lt;/article&gt;
+    
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+      </div>
+
+      <div class="sugerencias-fuentes">
+        <h3>🔤 Sugerencias de Combinaciones de Fuentes</h3>
+        
+        <div class="combinacion">
+          <h4>📚 Combinación Clásica</h4>
+          <ul>
+            <li><strong>Títulos:</strong> <code>font-family: "Times New Roman", serif;</code></li>
+            <li><strong>Descripciones:</strong> <code>font-family: "Arial", sans-serif;</code></li>
+          </ul>
+        </div>
+
+        <div class="combinacion">
+          <h4>🎭 Combinación Moderna</h4>
+          <ul>
+            <li><strong>Títulos:</strong> <code>font-family: "Helvetica", sans-serif; font-weight: bold;</code></li>
+            <li><strong>Descripciones:</strong> <code>font-family: "Georgia", serif;</code></li>
+          </ul>
+        </div>
+
+        <div class="combinacion">
+          <h4>🎨 Combinación Creativa</h4>
+          <ul>
+            <li><strong>Títulos:</strong> <code>font-family: "Impact", sans-serif; text-transform: uppercase;</code></li>
+            <li><strong>Descripciones:</strong> <code>font-family: "Verdana", sans-serif;</code></li>
+          </ul>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    <p>Code Cats Studio © 2025</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS — 3. Texto y tipografía</title>
+  <link rel="stylesheet" href="../../styles/base_teoria.css">
+  <link rel="stylesheet" href="../../styles/css/base_css.css">
+</head>
+<body>
+
+  <header>
+    <h1>3. Texto y tipografía</h1>
+    <p>Aprende a controlar la apariencia del texto con CSS</p>
+  </header>
+
+  <nav>
+    <a href="../../index.html"><img src="../../images/home.gif" alt="Inicio">Inicio</a>
+    <a href="#contenido"><img src="../../images/libro.png" alt="Contenido">Contenido</a>
+    <a href="../../pages/ejercicio3.html"><img src="../../images/code.gif" alt="Ejercicio">Ejercicio</a>
+  </nav>
+
+  <main id="contenido">
+    <section>
+      <h2>Propiedades de texto y tipografía</h2>
+
+      <p>Esta sección cubre todas las propiedades CSS que controlan la apariencia del texto. Desde colores básicos hasta fuentes personalizadas, cada propiedad incluye sus valores posibles y ejemplos prácticos.</p>
+
+      <h3>3.1 color</h3>
+      <p>La propiedad <code>color</code> define el color del texto del elemento. Es heredada por los elementos hijos.</p>
+      <p><strong>Valores de color:</strong></p>
+      <ul>
+        <li><strong>Nombres de colores:</strong> <code>red</code>, <code>blue</code>, <code>green</code>, <code>black</code>, <code>white</code>, <code>orange</code>, <code>purple</code>, etc.</li>
+        <li><strong>Hexadecimal:</strong> <code>#ff0000</code> (rojo), <code>#00ff00</code> (verde), <code>#0000ff</code> (azul), <code>#333333</code> (gris oscuro)</li>
+        <li><strong>RGB:</strong> <code>rgb(255, 0, 0)</code> (rojo), <code>rgb(0, 255, 0)</code> (verde), <code>rgb(100, 150, 200)</code></li>
+        <li><strong>RGBA:</strong> <code>rgba(255, 0, 0, 0.5)</code> (rojo semi-transparente), <code>rgba(0, 0, 0, 0.8)</code></li>
+        <li><strong>HSL:</strong> <code>hsl(0, 100%, 50%)</code> (rojo), <code>hsl(120, 100%, 50%)</code> (verde)</li>
+        <li><strong>HSLA:</strong> <code>hsla(240, 100%, 50%, 0.3)</code> (azul transparente)</li>
+      </ul>
+
+      <p><strong>Ejemplo interactivo — experimenta con diferentes colores:</strong></p>
+      
+      <p><strong>HTML:</strong></p>
+      <pre><code>&lt;p class="color-demo"&gt;¡Cambia el color de este texto!&lt;/p&gt;
+</code></pre>
+
+      <p><strong>CSS:</strong></p>
+      <pre><code>.color-demo {
+  color: #e74c3c; /* Prueba: blue, #2ecc71, rgb(255, 165, 0), rgba(128, 0, 128, 0.7) */
+  font-size: 18px;
+  font-weight: bold;
+}
+</code></pre>
+
+      <h3>3.2 text-align</h3>
+      <p>La propiedad <code>text-align</code> controla la alineación horizontal del texto dentro de su contenedor.</p>
+      <p><strong>Valores de text-align:</strong></p>
+      <ul>
+        <li><strong>left:</strong> alineación a la izquierda (predeterminado en idiomas LTR)</li>
+        <li><strong>right:</strong> alineación a la derecha</li>
+        <li><strong>center:</strong> centrado</li>
+        <li><strong>justify:</strong> justificado (espacio uniforme entre palabras)</li>
+        <li><strong>start:</strong> inicio lógico (izquierda en LTR, derecha en RTL)</li>
+        <li><strong>end:</strong> final lógico (derecha en LTR, izquierda en RTL)</li>
+      </ul>
+
+      <p><strong>Ejemplo interactivo — prueba diferentes alineaciones:</strong></p>
+      
+      <p><strong>HTML:</strong></p>
+      <pre><code>&lt;div class="alineacion-demo"&gt;
+  Este texto está alineado. Prueba cambiar 'center' por 'left', 'right' o 'justify' para ver las diferencias.
+&lt;/div&gt;
+</code></pre>
+
+      <p><strong>CSS:</strong></p>
+      <pre><code>.alineacion-demo {
+  text-align: center; /* Prueba: left, right, justify */
+  background: #f8f9fa;
+  padding: 20px;
+  border: 2px solid #dee2e6;
+  width: 300px;
+  margin: 20px auto;
+}
+</code></pre>
+
+      <h3>3.3 line-height</h3>
+      <p>La propiedad <code>line-height</code> controla el espacio vertical entre líneas de texto. Afecta directamente la legibilidad.</p>
+      <p><strong>Valores de line-height:</strong></p>
+      <ul>
+        <li><strong>Números:</strong> <code>1.5</code>, <code>2</code>, <code>1.2</code> (multiplicador del font-size)</li>
+        <li><strong>Longitudes:</strong> <code>20px</code>, <code>1.5em</code>, <code>24pt</code></li>
+        <li><strong>Porcentajes:</strong> <code>150%</code>, <code>120%</code> (del font-size del elemento)</li>
+        <li><strong>normal:</strong> valor por defecto (aproximadamente 1.2)</li>
+      </ul>
+
+      <p><strong>Ejemplo interactivo — ajusta el espaciado entre líneas:</strong></p>
+      
+      <p><strong>HTML:</strong></p>
+      <pre><code>&lt;p class="linea-demo"&gt;
+  Este párrafo tiene múltiples líneas de texto para demostrar cómo 
+  la propiedad line-height afecta el espaciado vertical entre las líneas. 
+  ¡Experimenta con diferentes valores!
+&lt;/p&gt;
+</code></pre>
+
+      <p><strong>CSS:</strong></p>
+      <pre><code>.linea-demo {
+  line-height: 1.8; /* Prueba: 1, 1.2, 2, 30px, 200% */
+  background: #e8f5e8;
+  padding: 15px;
+  border-left: 4px solid #2ecc71;
+  font-size: 16px;
+  width: 400px;
+}
+</code></pre>
+
+      <h3>3.4 text-transform</h3>
+      <p>La propiedad <code>text-transform</code> controla la capitalización del texto sin modificar el HTML.</p>
+      <p><strong>Valores de text-transform:</strong></p>
+      <ul>
+        <li><strong>none:</strong> sin transformación (valor por defecto)</li>
+        <li><strong>uppercase:</strong> convierte todo a MAYÚSCULAS</li>
+        <li><strong>lowercase:</strong> convierte todo a minúsculas</li>
+        <li><strong>capitalize:</strong> Primera Letra De Cada Palabra En Mayúscula</li>
+        <li><strong>full-width:</strong> caracteres de ancho completo (para idiomas asiáticos)</li>
+      </ul>
+
+      <p><strong>Ejemplo interactivo — transforma el texto:</strong></p>
+      
+      <p><strong>HTML:</strong></p>
+      <pre><code>&lt;p class="transformacion-demo"&gt;este texto cambia su capitalización automáticamente&lt;/p&gt;
+</code></pre>
+
+      <p><strong>CSS:</strong></p>
+      <pre><code>.transformacion-demo {
+  text-transform: capitalize; /* Prueba: uppercase, lowercase, none */
+  background: #fff3cd;
+  padding: 15px;
+  border: 2px solid #ffc107;
+  font-size: 18px;
+  font-weight: 500;
+}
+</code></pre>
+
+      <h3>3.5 text-shadow</h3>
+      <p>La propiedad <code>text-shadow</code> aplica efectos de sombra al texto, creando profundidad visual.</p>
+      <p><strong>Sintaxis:</strong> <code>text-shadow: offset-x offset-y blur-radius color;</code></p>
+      <p><strong>Valores de text-shadow:</strong></p>
+      <ul>
+        <li><strong>offset-x:</strong> desplazamiento horizontal (<code>2px</code>, <code>-1px</code>, <code>0</code>)</li>
+        <li><strong>offset-y:</strong> desplazamiento vertical (<code>2px</code>, <code>-1px</code>, <code>0</code>)</li>
+        <li><strong>blur-radius:</strong> radio de desenfoque (opcional: <code>0</code>, <code>3px</code>, <code>5px</code>)</li>
+        <li><strong>color:</strong> color de la sombra (<code>black</code>, <code>#333</code>, <code>rgba(0,0,0,0.5)</code>)</li>
+        <li><strong>none:</strong> sin sombra (valor por defecto)</li>
+      </ul>
+      <p><strong>Múltiples sombras:</strong> Separadas por comas: <code>text-shadow: 1px 1px 2px red, -1px -1px 2px blue;</code></p>
+
+      <p><strong>Ejemplo interactivo — experimenta con sombras:</strong></p>
+      
+      <p><strong>HTML:</strong></p>
+      <pre><code>&lt;h2 class="sombra-demo"&gt;¡Texto con Sombra!&lt;/h2&gt;
+</code></pre>
+
+      <p><strong>CSS:</strong></p>
+      <pre><code>.sombra-demo {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Prueba: 1px 1px 0px red, 0px 0px 10px blue */
+  color: #2c3e50;
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  background: #ecf0f1;
+  padding: 20px;
+}
+</code></pre>
+
+      <h3>3.6 font-family</h3>
+      <p>La propiedad <code>font-family</code> especifica qué fuente usar para el texto. Se pueden definir varias opciones como respaldo.</p>
+      <p><strong>Tipos de fuentes:</strong></p>
+      <ul>
+        <li><strong>Fuentes específicas:</strong> <code>"Arial"</code>, <code>"Times New Roman"</code>, <code>"Helvetica"</code></li>
+        <li><strong>Fuentes genéricas:</strong> <code>serif</code>, <code>sans-serif</code>, <code>monospace</code>, <code>cursive</code>, <code>fantasy</code></li>
+        <li><strong>Fuentes web:</strong> <code>"Roboto"</code>, <code>"Open Sans"</code>, <code>"Lato"</code> (requieren @import o link)</li>
+      </ul>
+      <p><strong>Sintaxis:</strong> <code>font-family: "Fuente específica", fuente-genérica;</code></p>
+
+      <p><strong>Ejemplo interactivo — prueba diferentes fuentes:</strong></p>
+      
+      <p><strong>HTML:</strong></p>
+      <pre><code>&lt;p class="fuente-demo"&gt;Esta fuente puede cambiar según disponibilidad del sistema&lt;/p&gt;
+</code></pre>
+
+      <p><strong>CSS:</strong></p>
+      <pre><code>.fuente-demo {
+  font-family: "Arial", "Helvetica", sans-serif; /* Prueba: "Times New Roman", serif, monospace */
+  font-size: 18px;
+  background: #f0f8ff;
+  padding: 15px;
+  border-left: 5px solid #007acc;
+}
+</code></pre>
+
+      <h3>3.7 font-size</h3>
+      <p>La propiedad <code>font-size</code> controla el tamaño del texto del elemento.</p>
+      <p><strong>Valores de font-size:</strong></p>
+      <ul>
+        <li><strong>Longitudes absolutas:</strong> <code>12px</code>, <code>16px</code>, <code>24px</code>, <code>14pt</code></li>
+        <li><strong>Longitudes relativas:</strong> <code>1em</code>, <code>1.2em</code>, <code>0.8rem</code>, <code>2rem</code></li>
+        <li><strong>Porcentajes:</strong> <code>100%</code>, <code>120%</code>, <code>80%</code> (relativo al padre)</li>
+        <li><strong>Palabras clave:</strong> <code>xx-small</code>, <code>x-small</code>, <code>small</code>, <code>medium</code>, <code>large</code>, <code>x-large</code>, <code>xx-large</code></li>
+        <li><strong>Relativos:</strong> <code>smaller</code>, <code>larger</code> (relativo al elemento padre)</li>
+      </ul>
+
+      <p><strong>Ejemplo interactivo — ajusta el tamaño del texto:</strong></p>
+      
+      <p><strong>HTML:</strong></p>
+      <pre><code>&lt;p class="tamaño-demo"&gt;El tamaño de este texto es configurable&lt;/p&gt;
+</code></pre>
+
+      <p><strong>CSS:</strong></p>
+      <pre><code>.tamaño-demo {
+  font-size: 20px; /* Prueba: 12px, 1.5em, 150%, large, x-large */
+  background: #ffe6f2;
+  padding: 15px;
+  border: 2px dashed #ff69b4;
+  text-align: center;
+}
+</code></pre>
+
+      <h3>3.8 font-weight</h3>
+      <p>La propiedad <code>font-weight</code> controla el grosor o "peso" de los caracteres del texto.</p>
+      <p><strong>Valores de font-weight:</strong></p>
+      <ul>
+        <li><strong>Palabras clave:</strong> <code>normal</code> (400), <code>bold</code> (700), <code>lighter</code>, <code>bolder</code></li>
+        <li><strong>Números:</strong> <code>100</code> (ultra-light), <code>200</code> (light), <code>300</code> (light), <code>400</code> (normal), <code>500</code> (medium), <code>600</code> (semi-bold), <code>700</code> (bold), <code>800</code> (extra-bold), <code>900</code> (black)</li>
+      </ul>
+      <p><strong>Nota:</strong> No todas las fuentes soportan todos los pesos. Si un peso no está disponible, el navegador usa el más cercano.</p>
+
+      <p><strong>Ejemplo interactivo — cambia el peso de la fuente:</strong></p>
+      
+      <p><strong>HTML:</strong></p>
+      <pre><code>&lt;p class="peso-demo"&gt;Este texto tiene un peso de fuente específico&lt;/p&gt;
+</code></pre>
+
+      <p><strong>CSS:</strong></p>
+      <pre><code>.peso-demo {
+  font-weight: 600; /* Prueba: normal, bold, 300, 400, 700, 900 */
+  font-size: 20px;
+  background: #e8f4fd;
+  padding: 20px;
+  border-left: 6px solid #3498db;
+  font-family: Arial, sans-serif;
+}
+</code></pre>
+
+    </section>
+  </main>
+
+  <footer>
+    <p>Code Cats Studio © 2025</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Propiedades de Caja y Diseño | Code Cats Studio</title>
+  <link rel="stylesheet" type="text/css" href="../../styles/base_teoria.css">
+  <link rel="stylesheet" href="../../styles/css/base_css.css">
+  <link rel="icon" type="image/png" href="../../images/icon.jpg">
+</head>
+<body>
+  <header>
+    <img src="../../images/logo1v.jpg" alt="Logo Code Cats Studio">
+    <h1>Propiedades de Caja y Diseño</h1>
+    <p>Explicación práctica del Box Model, bordes, tamaño y overflow.</p>
+  </header>
+
+  <nav>
+    <a href="../../index.html"><img src="../../images/home.gif" alt="Inicio">Inicio</a>
+    <a href="#contenido"><img src="../../images/libro.png" alt="Contenido">Contenido</a>
+    <a href="../../pages/ejercicio2.html"><img src="../../images/code.gif" alt="Ejercicio">Ejercicio</a>
+  </nav>
+
+  <main id="contenido">
+    <section>
+  <h2>Propiedades de caja y diseño</h2>
+
+  <p>Esta sección cubre todo lo esencial sobre cómo funcionan las cajas en CSS y las propiedades principales que afectan su apariencia y comportamiento en el flujo del documento. Cada subsección incluye un ejemplo pequeño (HTML) y el CSS mínimo necesario para aplicar lo aprendido.</p>
+
+      <h3>2.1 Modelo de caja (Box Model)</h3>
+      <p>El Box Model es el fundamento del diseño CSS. Cada elemento se compone de cuatro capas concéntricas:</p>
+      <ul>
+        <li><strong>Content (contenido):</strong> área donde aparece texto/imágenes. Se controla con <code>width</code> y <code>height</code>.</li>
+        <li><strong>Padding (relleno):</strong> espacio transparente entre contenido y borde. Propiedades: <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code>, <code>padding-left</code>, o el atajo <code>padding</code>.</li>
+        <li><strong>Border (borde):</strong> línea visible que rodea el padding. Tiene grosor, estilo y color.</li>
+        <li><strong>Margin (margen):</strong> espacio transparente fuera del borde que separa elementos.</li>
+      </ul>
+      <p><strong>box-sizing:</strong> <code>content-box</code> (por defecto) hace que width/height se refiera solo al contenido. <code>border-box</code> incluye padding y border en width/height, facilitando cálculos.</p>
+      
+      <p><strong>Ejemplo interactivo — copia el HTML y el CSS por separado:</strong></p>
+  
+  <p><strong>HTML:</strong></p>
+  <pre><code>&lt;div class="caja-demo"&gt;¡Experimenta con padding, border y margin!&lt;/div&gt;
+</code></pre>
+
+  <p><strong>CSS:</strong></p>
+  <pre><code>.caja-demo {
+  width: 200px;
+  padding: 20px;
+  border: 5px solid #e74c3c;
+  margin: 30px;
+  background: #ecf0f1;
+  box-sizing: border-box; /* Prueba cambiando a content-box */
+}
+</code></pre>  <h3>2.2 Bordes (Borders)</h3>
+  <p>Los bordes añaden una línea visible alrededor del elemento y forman parte del modelo de caja (ocupan espacio). Se componen de tres propiedades:</p>
+  <ul>
+    <li><strong>border-width:</strong> grosor del borde. Valores: <code>thin</code>, <code>medium</code>, <code>thick</code>, o medidas específicas (<code>1px</code>, <code>0.2em</code>).</li>
+    <li><strong>border-style:</strong> estilo de línea. Valores: <code>none</code> (sin borde), <code>solid</code> (línea continua), <code>dashed</code> (guiones), <code>dotted</code> (puntos), <code>double</code> (doble línea), <code>groove</code>, <code>ridge</code>, <code>inset</code>, <code>outset</code>.</li>
+    <li><strong>border-color:</strong> color del borde. Acepta nombres, hex, rgb, hsl.</li>
+  </ul>
+  <p><strong>Atajo:</strong> <code>border: [width] [style] [color];</code> define las tres propiedades a la vez. También puedes usar <code>border-top</code>, <code>border-right</code>, <code>border-bottom</code>, <code>border-left</code> para lados específicos.</p>
+  
+  <p><strong>Ejemplo interactivo — prueba diferentes estilos de borde:</strong></p>
+  
+  <p><strong>HTML:</strong></p>
+  <pre><code>&lt;div class="borde-demo"&gt;Cambia 'solid' por 'dashed', 'dotted' o 'double'&lt;/div&gt;
+</code></pre>
+
+  <p><strong>CSS:</strong></p>
+  <pre><code>.borde-demo {
+  border: 4px solid #3498db; /* Cambia solid por: dashed, dotted, double */
+  padding: 15px;
+  margin: 10px;
+  background: #f8f9fa;
+}
+</code></pre>
+
+  <h3>2.3 Márgenes (Margins)</h3>
+  <p>Los márgenes crean espacio exterior alrededor del elemento, separándolo de otros elementos. Propiedades individuales: <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code>, <code>margin-left</code>.</p>
+  <p><strong>Valores de margin:</strong> longitudes (<code>10px</code>, <code>1em</code>), porcentajes (<code>5%</code>), <code>auto</code> (centra automáticamente), o <code>0</code> (sin margen).</p>
+  <p><strong>Atajos de margin:</strong></p>
+  <ul>
+    <li><code>margin: 10px;</code> — aplica 10px a todos los lados.</li>
+    <li><code>margin: 10px 20px;</code> — 10px arriba/abajo, 20px izquierda/derecha.</li>
+    <li><code>margin: 10px 20px 30px;</code> — 10px arriba, 20px lados, 30px abajo.</li>
+    <li><code>margin: 10px 20px 30px 40px;</code> — arriba, derecha, abajo, izquierda (sentido horario).</li>
+  </ul>
+  <p><strong>Colapso de márgenes:</strong> los márgenes verticales adyacentes pueden colapsar en uno solo (el mayor de los dos).</p>
+  
+  <p><strong>Ejemplo interactivo — experimenta con diferentes márgenes:</strong></p>
+  
+  <p><strong>HTML:</strong></p>
+  <pre><code>&lt;div class="margen-demo"&gt;Caja A - Cambia el margin&lt;/div&gt;
+&lt;div class="margen-demo"&gt;Caja B - ¡Ve cómo colapsan los márgenes!&lt;/div&gt;
+</code></pre>
+
+  <p><strong>CSS:</strong></p>
+  <pre><code>.margen-demo {
+  margin: 20px; /* Prueba: 10px 50px, o 5px 10px 15px 20px */
+  padding: 10px;
+  background: #2ecc71;
+  color: white;
+  border: 2px solid #27ae60;
+}
+</code></pre>
+
+  <h3>2.4 Rellenos (Padding)</h3>
+  <p>El padding crea espacio interno entre el contenido y el borde del elemento. A diferencia del margin, el padding toma el color de fondo del elemento. Propiedades individuales: <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code>, <code>padding-left</code>.</p>
+  <p><strong>Valores de padding:</strong> longitudes (<code>10px</code>, <code>1em</code>), porcentajes (<code>5%</code>), o <code>0</code> (sin relleno). No acepta valores negativos ni <code>auto</code>.</p>
+  <p><strong>Atajos de padding:</strong> funcionan igual que margin:</p>
+  <ul>
+    <li><code>padding: 10px;</code> — 10px en todos los lados.</li>
+    <li><code>padding: 10px 20px;</code> — 10px arriba/abajo, 20px izquierda/derecha.</li>
+    <li><code>padding: 10px 20px 30px 40px;</code> — arriba, derecha, abajo, izquierda.</li>
+  </ul>
+  
+  <p><strong>Ejemplo interactivo — ve cómo el padding afecta el espacio interno:</strong></p>
+  
+  <p><strong>HTML:</strong></p>
+  <pre><code>&lt;div class="padding-demo"&gt;¡El padding crea espacio interno! Cambia los valores.&lt;/div&gt;
+</code></pre>
+
+  <p><strong>CSS:</strong></p>
+  <pre><code>.padding-demo {
+  padding: 25px; /* Prueba: 10px 30px, o 5px 15px 25px 35px */
+  background: #f39c12;
+  border: 3px solid #e67e22;
+  margin: 20px;
+  color: white;
+}
+</code></pre>
+
+  <h3>2.5 Tamaño (width, height, max-width)</h3>
+  <p>Estas propiedades controlan las dimensiones del área de contenido del elemento:</p>
+  <ul>
+    <li><strong>width:</strong> ancho del contenido. Valores: longitudes (<code>300px</code>, <code>20em</code>), porcentajes (<code>50%</code>), <code>auto</code> (automático).</li>
+    <li><strong>height:</strong> alto del contenido. Mismos valores que width.</li>
+    <li><strong>min-width/min-height:</strong> tamaño mínimo. Útil para evitar que elementos se vuelvan demasiado pequeños.</li>
+    <li><strong>max-width/max-height:</strong> tamaño máximo. Crucial para diseño responsive — evita que elementos crezcan demasiado en pantallas grandes.</li>
+  </ul>
+  <p><strong>Responsive:</strong> usar <code>width: 100%; max-width: 800px;</code> hace que el elemento ocupe todo el ancho disponible hasta un límite.</p>
+  <p><strong>height: auto</strong> permite que la altura se ajuste automáticamente al contenido.</p>
+  
+  <p><strong>Ejemplo interactivo — redimensiona la ventana para ver responsive:</strong></p>
+  
+  <p><strong>HTML:</strong></p>
+  <pre><code>&lt;div class="tamano-demo"&gt;¡Redimensiona la ventana!&lt;/div&gt;
+</code></pre>
+
+  <p><strong>CSS:</strong></p>
+  <pre><code>.tamano-demo {
+  width: 100%; /* Prueba: 300px, 80%, auto */
+  max-width: 500px; /* Cambia este valor: 200px, 800px */
+  height: 150px; /* Prueba: auto, 100px, 200px */
+  background: #9b59b6;
+  color: white;
+  text-align: center;
+  line-height: 150px;
+  margin: 20px auto;
+}
+</code></pre>
+
+  <h3>2.6 Contorno (Outline)</h3>
+  <p>El outline es una línea que se dibuja alrededor del elemento, por fuera del borde, sin ocupar espacio en el layout. Es especialmente útil para indicar foco en elementos interactivos.</p>
+  <p><strong>Propiedades de outline:</strong></p>
+  <ul>
+    <li><strong>outline-width:</strong> grosor. Valores: <code>thin</code>, <code>medium</code>, <code>thick</code>, o medidas (<code>2px</code>).</li>
+    <li><strong>outline-style:</strong> estilo de línea. Valores: <code>none</code>, <code>solid</code>, <code>dashed</code>, <code>dotted</code>, <code>double</code>, <code>groove</code>, <code>ridge</code>, <code>inset</code>, <code>outset</code>.</li>
+    <li><strong>outline-color:</strong> color del outline. Acepta <code>invert</code> (invierte el color de fondo), nombres, hex, rgb, hsl.</li>
+    <li><strong>outline-offset:</strong> distancia entre el borde y el outline. Puede ser negativa para que se superponga.</li>
+  </ul>
+  <p><strong>Atajo:</strong> <code>outline: [width] [style] [color];</code></p>
+  <p><strong>Accesibilidad:</strong> es crucial para navegación por teclado — no elimines outline en <code>:focus</code> sin proporcionar alternativa.</p>
+  
+  <p><strong>Ejemplo interactivo — haz clic en el botón para ver el outline:</strong></p>
+  
+  <p><strong>HTML:</strong></p>
+  <pre><code>&lt;button class="outline-demo"&gt;¡Haz clic aquí para ver el outline!&lt;/button&gt;
+</code></pre>
+
+  <p><strong>CSS:</strong></p>
+  <pre><code>.outline-demo {
+  padding: 15px 25px;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  margin: 20px;
+  cursor: pointer;
+}
+
+.outline-demo:focus {
+  outline: 4px dashed #f1c40f; /* Prueba: solid, dotted, double */
+  outline-offset: 6px; /* Cambia: 2px, -2px, 10px */
+}
+</code></pre>
+
+  <h3>2.7 Overflow</h3>
+  <p>La propiedad overflow controla qué sucede cuando el contenido del elemento es más grande que su caja contenedora. También existe <code>overflow-x</code> (horizontal) y <code>overflow-y</code> (vertical) para control independiente.</p>
+  <p><strong>Valores de overflow:</strong></p>
+  <ul>
+    <li><strong>visible</strong> (por defecto): el contenido se desborda y es visible fuera de la caja.</li>
+    <li><strong>hidden:</strong> el contenido sobrante se oculta/corta — no hay scroll.</li>
+    <li><strong>scroll:</strong> siempre muestra barras de desplazamiento, incluso si no son necesarias.</li>
+    <li><strong>auto:</strong> muestra barras de scroll sólo cuando el contenido se desborda (recomendado).</li>
+    <li><strong>clip:</strong> similar a hidden, pero más restrictivo — evita crear contextos de scroll.</li>
+  </ul>
+  <p><strong>Efectos secundarios:</strong> overflow diferente a visible puede crear un nuevo contexto de formateo de bloque y afectar el posicionamiento de elementos internos.</p>
+  
+  <p><strong>Ejemplo interactivo — cambia 'auto' por 'hidden' o 'scroll':</strong></p>
+  
+  <p><strong>HTML:</strong></p>
+  <pre><code>&lt;div class="overflow-demo"&gt;
+  Este es un texto muy largo que definitivamente no cabe en esta pequeña caja. 
+  Sigue leyendo para ver cómo el overflow controla qué pasa con el contenido 
+  que no cabe. ¡Prueba cambiar 'auto' por 'hidden', 'scroll' o 'visible'!
+&lt;/div&gt;
+</code></pre>
+
+  <p><strong>CSS:</strong></p>
+  <pre><code>.overflow-demo {
+  width: 250px;
+  height: 100px;
+  overflow: auto; /* Cambia por: hidden, scroll, visible */
+  border: 3px solid #34495e;
+  padding: 10px;
+  background: #ecf0f1;
+}
+</code></pre>
+
+  <p><strong>Resumen ampliado:</strong> Para diseños predecibles usa <code>box-sizing: border-box</code>, controla padding/border/margin con atajos cuando convenga, y usa <code>max-width</code> y <code>overflow</code> para manejar contenido y responsividad.</p>
+
+    </section>
+  </main>
+
+  <footer>
+    <p>Code Cats Studio © 2025 | Hecho con ❤️ y muchas ganas de aprender</p>
+  </footer>
+</body>
+</html>
