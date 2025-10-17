@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS — Desafío integrador</title>
+    <link rel="stylesheet" href="../../styles/base_teoria.css" />
+    <link rel="stylesheet" href="../../styles/css/base_css.css" />
+    <style>
+      /* Contenedores alineados a tu estilo */
+      .callout,
+      .demo,
+      .practice {
+        background: var(--bg-dark);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 14px;
+        padding: 1rem 1.2rem;
+        box-shadow: var(--shadow);
+        margin: 1rem 0;
+      }
+      .callout h4 {
+        margin: 0 0 0.6rem;
+      }
+
+      .pill {
+        display: inline-block;
+        padding: 0.15rem 0.6rem;
+        border-radius: 999px;
+        background: var(--bg-light);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        font-size: 0.85rem;
+      }
+
+      .grid-2 {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      }
+      .grid-3 {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      }
+
+      /* Elementos a estilizar en el desafío (sin estilos fuertes) */
+      .shell {
+        background: rgba(0, 0, 0, 0.25);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 14px;
+        padding: 1rem;
+      }
+      .brand img {
+        width: 36px;
+        height: 36px;
+        object-fit: cover;
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+      .content p {
+        margin: 0.5rem 0;
+      }
+      .cards {
+        display: grid;
+        gap: 12px;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      }
+      .card {
+        background: var(--bg-light);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 12px;
+        padding: 1rem;
+        color: #fff;
+        position: relative;
+        overflow: hidden;
+        transition: var(--transition);
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.28);
+      }
+      .card h3 {
+        margin-bottom: 0.4rem;
+      }
+      .gallery {
+        display: grid;
+        gap: 12px;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      }
+      .gallery img {
+        height: 120px;
+        object-fit: cover;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+      }
+
+      /* Ayudas mínimas para accesibilidad visual del foco (puedes reemplazarlas) */
+      a:focus,
+      button:focus,
+      input:focus {
+        outline: 3px solid var(--accent);
+        outline-offset: 2px;
+      }
+
+      /* Caja de chequeo de criterios */
+      .rubrica {
+        display: grid;
+        gap: 0.6rem;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      }
+      .rubrica .item {
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 10px;
+        padding: 0.8rem;
+      }
+
+      /* Bloque “entregable” */
+      .entrega {
+        background: rgba(0, 0, 0, 0.25);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 14px;
+        padding: 1rem 1.2rem;
+      }
+
+      @media (max-width: 560px) {
+        .gallery img {
+          height: 100px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Desafío integrador</h1>
+      <p>
+        Crea una página de “Portafolio personal” aplicando layout, selectores,
+        pseudo‑clases, pseudo‑elementos, opacidad y efectos visuales.
+      </p>
+    </header>
+
+    <nav>
+      <a href="../../index.html"
+        ><img src="../../images/home.gif" alt="Inicio" />Inicio</a
+      >
+      <a href="#consignas"
+        ><img src="../../images/libro.png" alt="Contenido" />Consignas</a
+      >
+      <a href="#entrega"
+        ><img src="../../images/code.gif" alt="Entrega" />Entrega</a
+      >
+    </nav>
+
+    <main id="consignas">
+      <section>
+        <h2>Objetivo</h2>
+        <p>
+          Diseña una landing de portafolio (una sola página) con una
+          <span class="pill">navbar</span>, un <span class="pill">hero</span>,
+          una sección de <span class="pill">proyectos</span> y un
+          <span class="pill">footer</span>. Debe verse bien en móvil y
+          escritorio, ser accesible al teclado y demostrar dominio de los temas
+          vistos.
+        </p>
+
+        <h2>Requisitos funcionales y técnicos</h2>
+
+        <div class="callout">
+          <h4>1) Estructura y navegación</h4>
+          <ul>
+            <li>
+              Incluye una <strong>barra de navegación</strong> semántica con
+              logo o nombre a la izquierda y enlaces a la derecha (usa Flexbox).
+              Marca el enlace activo con <code>.active</code> o
+              <code>aria-current="page"</code>.
+            </li>
+            <li>
+              En móviles, la navbar debe <strong>adaptarse</strong>: wrapping o
+              columna.
+            </li>
+            <li>
+              Estados <strong>:hover</strong> y <strong>:focus</strong> visibles
+              en enlaces para accesibilidad.
+            </li>
+          </ul>
+        </div>
+
+        <div class="callout">
+          <h4>2) Layout y posicionamiento</h4>
+          <ul>
+            <li>
+              Usa <strong>Flexbox</strong> y/o <strong>Grid</strong> para
+              organizar tarjetas de proyectos (mínimo 4) de forma responsive.
+            </li>
+            <li>
+              Demuestra al menos un uso claro de
+              <strong>position: relative/absolute</strong> (por ejemplo, una
+              “etiqueta” de estado en una tarjeta).
+            </li>
+            <li>
+              Evita <strong>float</strong> para layout principal (puedes usarlo
+              si lo justificas para envolver texto con imagen).
+            </li>
+          </ul>
+        </div>
+
+        <div class="callout">
+          <h4>3) Selectores, combinadores y especificidad</h4>
+          <ul>
+            <li>
+              Aplica selectores <strong>básicos</strong> (elemento, clase, id,
+              atributo) y <strong>combinadores</strong> (descendiente, hijo
+              <code>&gt;</code>, hermanos <code>+</code>/<code>~</code>).
+            </li>
+            <li>
+              Demuestra control de <strong>especificidad</strong>: estiliza
+              <code>.card &gt; h3</code> sin afectar <code>.card h3</code> más
+              profundo.
+            </li>
+            <li>
+              Usa <code>:not()</code> de forma estratégica para excluir
+              elementos de una regla.
+            </li>
+          </ul>
+        </div>
+
+        <div class="callout">
+          <h4>4) Pseudo‑clases y pseudo‑elementos</h4>
+          <ul>
+            <li>
+              Implementa estados de interacción: <code>:hover</code>,
+              <code>:focus</code>, <code>:active</code>,
+              <code>:disabled</code> en al menos un botón o enlace.
+            </li>
+            <li>
+              Usa <code>:nth-child()</code> para alternar estilos en listas o
+              rejillas.
+            </li>
+            <li>
+              Crea al menos un decorador con <code>::before</code> o
+              <code>::after</code> (por ejemplo, un badge “Nuevo” o un subrayado
+              animado).
+            </li>
+          </ul>
+        </div>
+
+        <div class="callout">
+          <h4>5) Opacidad y efectos visuales</h4>
+          <ul>
+            <li>
+              Si necesitas transparencia, evita <code>opacity</code> global que
+              afecte hijos; prefiere <code>rgba()/hsla()</code> u
+              <strong>overlay</strong>.
+            </li>
+            <li>
+              Aplica <strong>box-shadow</strong> y
+              <strong>text-shadow</strong> con moderación para profundidad.
+            </li>
+            <li>
+              Agrega microinteracciones con <strong>transform</strong> y
+              <strong>transition</strong> (por ejemplo, elevar tarjetas al hover
+              y <code>scale(0.98)</code> al active en botones).
+            </li>
+          </ul>
+        </div>
+
+        <h2>Bloques mínimos sugeridos</h2>
+        <div class="demo">
+          <div class="grid-2">
+            <div class="shell">
+              <h3>Navbar</h3>
+              <p>
+                Logo a la izquierda, links a la derecha. En móvil: wrap o
+                columna.
+              </p>
+              <pre><code>&lt;nav aria-label="principal" class="navbar"&gt;
+  &lt;a class="brand" href="#"&gt;&lt;img src="../../images/home.gif" alt=""&gt;Tu Nombre&lt;/a&gt;
+  &lt;ul&gt; &lt;li&gt;&lt;a class="active" href="#"&gt;Inicio&lt;/a&gt;&lt;/li&gt; ... &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+            </div>
+            <div class="shell">
+              <h3>Hero</h3>
+              <p>
+                Usa overlay con <code>rgba()</code> o una capa semitransparente
+                para contraste sin afectar el texto.
+              </p>
+              <pre><code>.hero { position:relative; }
+.hero::before { content:""; position:absolute; inset:0; background: rgba(0,0,0,.25); }</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="demo">
+          <h3>Sección proyectos (grid + tarjetas)</h3>
+          <div class="cards">
+            <article class="card">
+              <h3>Proyecto 1</h3>
+              <p class="meta">HTML/CSS</p>
+            </article>
+            <article class="card">
+              <h3>Proyecto 2</h3>
+              <p class="meta">UI</p>
+            </article>
+            <article class="card">
+              <h3>Proyecto 3</h3>
+              <p class="meta">Accesibilidad</p>
+            </article>
+            <article class="card">
+              <h3>Proyecto 4</h3>
+              <p class="meta">Responsive</p>
+            </article>
+          </div>
+          <pre><code>.cards { display:grid; gap:12px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.card:hover { transform: translateY(-4px); box-shadow: 0 12px 26px rgba(0,0,0,.38); transition: var(--transition); }</code></pre>
+        </div>
+
+        <div class="demo">
+          <h3>Galería (opcional)</h3>
+          <div class="gallery">
+            <img src="https://placehold.co/600x400" alt="Demo 1" />
+            <img src="https://placehold.co/600x400" alt="Demo 2" />
+            <img src="https://placehold.co/600x400" alt="Demo 3" />
+          </div>
+          <pre><code>.gallery { display:grid; gap:12px; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); }</code></pre>
+        </div>
+
+        <h2>Criterios de evaluación (rúbrica)</h2>
+        <div class="rubrica">
+          <div class="item">
+            <strong>Semántica y accesibilidad</strong>
+            <ul>
+              <li>
+                Usa etiquetas correctas (header, nav, main, section, footer).
+              </li>
+              <li>Foco visible en elementos interactivos.</li>
+            </ul>
+          </div>
+          <div class="item">
+            <strong>Layout responsive</strong>
+            <ul>
+              <li>Navbar adaptable y rejillas fluidas.</li>
+              <li>Sin desbordes en móvil.</li>
+            </ul>
+          </div>
+          <div class="item">
+            <strong>Estilo y especificidad</strong>
+            <ul>
+              <li>Uso adecuado de combinadores y :not().</li>
+              <li>Evita !important; controla la cascada.</li>
+            </ul>
+          </div>
+          <div class="item">
+            <strong>Interacciones</strong>
+            <ul>
+              <li>:hover, :focus y :active consistentes.</li>
+              <li>Microanimaciones suaves con transition/transform.</li>
+            </ul>
+          </div>
+          <div class="item">
+            <strong>Efectos visuales</strong>
+            <ul>
+              <li>Sombras y opacidad con criterio.</li>
+              <li>Uso de rgba()/overlay vs opacity global.</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2 id="entrega">Entrega</h2>
+        <div class="entrega">
+          <ul>
+            <li>
+              Sube una carpeta con:
+              <ul>
+                <li>index.html (tu portafolio)</li>
+                <li>css/estilos.css (tu hoja de estilos)</li>
+                <li>images/ (activos usados)</li>
+              </ul>
+            </li>
+            <li>
+              Incluye en el HTML un comentario al inicio con: nombre, comisión,
+              y breve lista de secciones implementadas.
+            </li>
+            <li>
+              Tiempo sugerido: 60–75 minutos. Extra: si terminas antes, agrega
+              un “modo oscuro/claro” con <code>:root</code> variables.
+            </li>
+          </ul>
+        </div>
+
+        <h2>Tips y recordatorios</h2>
+        <ul>
+          <li>
+            Para contrastes: prefiere <code>rgba()</code> u overlay antes que
+            <code>opacity</code> en contenedor.
+          </li>
+          <li>
+            Usa <code>repeat(auto-fit, minmax())</code> en Grid para galerías
+            fluidas.
+          </li>
+          <li>
+            Recuerda <code>.card &gt; h3</code> vs <code>.card h3</code> para
+            evitar fugas de estilo.
+          </li>
+          <li>
+            No olvides focus visible y prueba con teclado (Tab/Shift+Tab).
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>Code Cats Studio © 2025</p>
+    </footer>
+  </body>
+</html>

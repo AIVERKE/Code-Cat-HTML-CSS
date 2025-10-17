@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS — 4. Navegación y menús (Navbars)</title>
+    <link rel="stylesheet" href="../../styles/base_teoria.css" />
+    <link rel="stylesheet" href="../../styles/css/base_css.css" />
+    <style>
+      /* Contenedores de ayuda alineados al estilo base */
+      .callout,
+      .demo,
+      .practice {
+        background: var(--bg-dark);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 14px;
+        padding: 1rem 1.2rem;
+        box-shadow: var(--shadow);
+        margin: 1rem 0;
+      }
+      .callout h4 {
+        margin: 0 0 0.6rem;
+      }
+      .grid-2 {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      }
+      .pill {
+        display: inline-block;
+        padding: 0.15rem 0.6rem;
+        border-radius: 999px;
+        background: var(--bg-light);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        font-size: 0.85rem;
+      }
+
+      /* 4.1 Navbar básica — semántica y layout */
+      .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between; /* logo izq / links der */
+        gap: 12px;
+        padding: 0.6rem 0.9rem;
+        background: var(--bg-light);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 12px;
+        box-shadow: var(--shadow);
+      }
+      .navbar .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 800;
+      }
+      .navbar .brand img {
+        width: 32px;
+        height: 32px;
+        object-fit: cover;
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+      .navbar nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap; /* Responsivo básico: wrap */
+      }
+      .navbar nav a {
+        display: inline-block;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 600;
+        padding: 0.5rem 0.8rem;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        background: transparent;
+        transition: var(--transition);
+        outline: none;
+      }
+      .navbar nav a:hover {
+        background: var(--accent);
+        color: var(--primary);
+        transform: translateY(-2px);
+      }
+      .navbar nav a:focus {
+        outline: 3px solid var(--accent);
+        outline-offset: 2px;
+      }
+      .navbar nav a.active,
+      .navbar nav a[aria-current="page"] {
+        background: var(--primary);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Variante compacta para pantallas pequeñas: columna */
+      @media (max-width: 560px) {
+        .navbar {
+          flex-direction: column;
+          align-items: stretch;
+        }
+        .navbar nav ul {
+          justify-content: space-between;
+        }
+        .navbar nav a {
+          flex: 1 1 auto;
+          text-align: center;
+        }
+      }
+
+      /* Demo extra: lista vertical a navbar horizontal (micropráctica) */
+      .lista-vertical {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .lista-vertical li a {
+        display: block;
+        padding: 0.6rem 0.8rem;
+        color: #fff;
+        text-decoration: none;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 10px;
+        background: var(--bg-light);
+        margin-bottom: 0.5rem;
+        transition: var(--transition);
+      }
+      .lista-vertical li a:hover {
+        background: var(--accent);
+        color: var(--primary);
+      }
+
+      /* Resultado deseado: horizontal con espaciado uniforme */
+      .navbar-prac {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        background: var(--bg-light);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 12px;
+        padding: 0.6rem;
+        box-shadow: var(--shadow);
+        justify-content: space-evenly; /* espaciado uniforme */
+      }
+      .navbar-prac a {
+        display: inline-block;
+        min-width: 120px;
+        text-align: center;
+        padding: 0.6rem 0.8rem;
+        border-radius: 10px;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 600;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        transition: var(--transition);
+        background: transparent;
+      }
+      .navbar-prac a:hover {
+        background: var(--accent);
+        color: var(--primary);
+        transform: translateY(-2px);
+      }
+      .navbar-prac a:focus {
+        outline: 3px solid var(--accent);
+        outline-offset: 2px;
+      }
+
+      /* Mini helper para código */
+      pre {
+        margin-top: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>4. Navegación y menús (Navbars)</h1>
+      <p>
+        Construye una barra de navegación semántica, flexible y accesible. Logo
+        a la izquierda, enlaces a la derecha, estado activo y respuesta a
+        pantallas pequeñas.
+      </p>
+    </header>
+
+    <nav>
+      <a href="../../index.html"
+        ><img src="../../images/home.gif" alt="Inicio" />Inicio</a
+      >
+      <a href="#contenido"
+        ><img src="../../images/libro.png" alt="Contenido" />Contenido</a
+      >
+      <a href="../../pages/ejercicio4.html"
+        ><img src="../../images/code.gif" alt="Ejercicio" />Ejercicio</a
+      >
+    </nav>
+
+    <main id="contenido">
+      <section>
+        <h2>4. Navegación y menús</h2>
+        <p>
+          Veremos la estructura semántica de una barra de navegación con
+          <span class="pill">&lt;header&gt;</span>,
+          <span class="pill">&lt;nav&gt;</span> y una
+          <span class="pill">lista</span> de enlaces; el layout con
+          <span class="pill">Flexbox</span> para distribuir logo y links; el
+          estado activo con <span class="pill">.active</span> o
+          <span class="pill">aria-current</span>; y un ajuste responsivo rápido
+          con wrap o cambio a columna.
+        </p>
+
+        <!-- 4.1 Barra de navegación básica -->
+        <h3>4.1 Barra de navegación básica</h3>
+
+        <div class="callout">
+          <h4>Estructura semántica</h4>
+          <ul>
+            <li>
+              Usa <strong>&lt;nav aria-label="principal"&gt;</strong> para el
+              bloque de navegación.
+            </li>
+            <li>
+              Lista de enlaces con
+              <strong>&lt;ul&gt; &lt;li&gt; &lt;a&gt;</strong> para semántica y
+              accesibilidad.
+            </li>
+            <li>
+              Logo/brand como <strong>&lt;a&gt;</strong> al inicio para volver a
+              inicio.
+            </li>
+          </ul>
+        </div>
+
+        <div class="demo">
+          <p>
+            <strong
+              >Navbar con logo a la izquierda, links a la derecha; :hover y foco
+              accesible:</strong
+            >
+          </p>
+          <div class="navbar" role="navigation" aria-label="principal">
+            <a href="#inicio" class="brand">
+              <img src="../../images/home.gif" alt="Logo" />
+              <span>Mi Sitio</span>
+            </a>
+            <nav aria-label="enlaces principales">
+              <ul>
+                <li>
+                  <a href="#inicio" class="active" aria-current="page"
+                    >Inicio</a
+                  >
+                </li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+              </ul>
+            </nav>
+          </div>
+
+          <pre><code>&lt;header&gt;
+  &lt;nav aria-label="principal" class="navbar"&gt;
+    &lt;a href="/" class="brand"&gt;...logo...&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href="/" aria-current="page" class="active"&gt;Inicio&lt;/a&gt;&lt;/li&gt;
+      ...
+    &lt;/ul&gt;
+  &lt;/nav&gt;
+&lt;/header&gt;
+
+/* Layout con Flexbox y estado activo */
+.navbar { display:flex; justify-content:space-between; align-items:center; }
+.navbar a.active, .navbar a[aria-current="page"] { background: var(--primary); }</code></pre>
+        </div>
+
+        <div class="callout">
+          <h4>Responsivo rápido</h4>
+          <ul>
+            <li>
+              Permite <strong>flex-wrap</strong> en los links para que “bajen de
+              línea”.
+            </li>
+            <li>
+              En móviles, cambia a <strong>columna</strong> y haz que los links
+              ocupen todo el ancho para fácil toque.
+            </li>
+            <li>
+              Alternativa: mostrar/ocultar un menú colapsable (fuera del alcance
+              de esta demo rápida).
+            </li>
+          </ul>
+        </div>
+
+        <!-- Micropráctica -->
+        <h3>Micropráctica</h3>
+        <div class="practice">
+          <p>
+            <strong>Objetivo:</strong> convertir una lista vertical en una
+            navbar horizontal con espaciado uniforme.
+          </p>
+          <div class="grid-2">
+            <div>
+              <p><em>Antes: lista vertical</em></p>
+              <ul class="lista-vertical">
+                <li><a href="#!">Inicio</a></li>
+                <li><a href="#!">Servicios</a></li>
+                <li><a href="#!">Portafolio</a></li>
+                <li><a href="#!">Contacto</a></li>
+              </ul>
+            </div>
+            <div>
+              <p><em>Después: navbar horizontal</em></p>
+              <nav class="navbar-prac" aria-label="práctica navbar">
+                <a href="#!">Inicio</a>
+                <a href="#!">Servicios</a>
+                <a href="#!">Portafolio</a>
+                <a href="#!">Contacto</a>
+              </nav>
+            </div>
+          </div>
+
+          <pre><code>/* Paso 1: convertir &lt;ul&gt; vertical a fila */
+ul { display: flex; gap: 12px; justify-content: space-evenly; flex-wrap: wrap; }
+
+/* Paso 2: estilizar enlaces */
+ul a {
+  display: inline-block; padding: .6rem .8rem; border-radius: 10px;
+  text-decoration: none; color: #fff; border: 1px solid rgba(255,255,255,.15);
+  transition: var(--transition);
+}
+ul a:hover { background: var(--accent); color: var(--primary); }</code></pre>
+        </div>
+
+        <h2>Checklist de comprensión</h2>
+        <ul>
+          <li>
+            ¿Mi navbar usa &lt;nav&gt; y lista de enlaces para semántica y
+            accesibilidad?
+          </li>
+          <li>¿Distribuí logo y enlaces con Flexbox de forma clara?</li>
+          <li>¿Expongo estado activo con .active o aria-current="page"?</li>
+          <li>¿Mi navbar se adapta: wrap o columna en pantallas pequeñas?</li>
+          <li>¿Aseguré hover y focus visibles para teclado y accesibilidad?</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>Code Cats Studio © 2025</p>
+    </footer>
+  </body>
+</html>

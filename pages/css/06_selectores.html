@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Selectores y pseudo‑clases</title>
+    <link rel="stylesheet" href="../../styles/base_teoria.css" />
+    <link rel="stylesheet" href="../../styles/css/base_css.css" />
+    <style>
+      /* Complementos compatibles con tu base */
+      .callout,
+      .demo,
+      .practice {
+        background: var(--bg-dark);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 14px;
+        padding: 1rem 1.2rem;
+        box-shadow: var(--shadow);
+        margin: 1rem 0;
+      }
+      .callout h4 {
+        margin: 0 0 0.6rem;
+      }
+      .pill {
+        display: inline-block;
+        padding: 0.15rem 0.6rem;
+        border-radius: 999px;
+        background: var(--bg-light);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        font-size: 0.85rem;
+      }
+      .grid-2 {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      }
+      pre {
+        margin-top: 1rem;
+      }
+
+      /* Demo tarjetas para selectores */
+      .cards {
+        display: grid;
+        gap: 12px;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      }
+      .card {
+        background: var(--bg-light);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 12px;
+        padding: 12px;
+        color: #fff;
+        box-shadow: var(--shadow);
+      }
+      .card h3 {
+        margin-bottom: 0.4rem;
+      }
+      .card .inner {
+        padding: 8px;
+        border-radius: 8px;
+        background: rgba(0, 0, 0, 0.25);
+      }
+      .card .inner h3 {
+        margin: 0;
+      }
+
+      /* Para visualizar la demo de combinadores y especificidad */
+      .demo-combinadores .card > h3 {
+        color: var(--accent);
+      } /* objetivo */
+      .demo-combinadores .card h3 {
+        /* general (afecta también profundos) */
+        /* Si estuviera activo, sobrescribiría; lo dejamos sin estilos para demostrar
+         que el > es más específico al apuntar solo al hijo directo */
+      }
+      .demo-combinadores .card .inner h3 {
+        color: #fff;
+      } /* no afectado por > */
+
+      /* Pseudo‑clases de interacción para enlace accesible */
+      .demo-enlaces a {
+        display: inline-block;
+        color: #fff;
+        background: var(--primary);
+        padding: 0.6rem 0.9rem;
+        border-radius: 10px;
+        text-decoration: none;
+        transition: var(--transition);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        outline: none;
+      }
+      .demo-enlaces a:hover {
+        background: var(--accent);
+        color: var(--primary);
+        transform: translateY(-2px);
+      }
+      .demo-enlaces a:focus {
+        outline: 3px solid var(--accent);
+        outline-offset: 2px;
+      }
+      .demo-enlaces a:active {
+        transform: translateY(0);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+      }
+
+      /* Listas alternadas con nth-child */
+      .lista-alt {
+        list-style: none;
+        padding-left: 0;
+        margin: 0.6rem 0;
+      }
+      .lista-alt li {
+        padding: 0.6rem 0.8rem;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.06);
+      }
+      .lista-alt li:nth-child(odd) {
+        background: rgba(255, 255, 255, 0.1);
+      }
+      .lista-alt li:nth-child(even) {
+        background: rgba(255, 255, 255, 0.06);
+      }
+
+      /* Pseudo‑elementos: título con ::before */
+      .decorado h3 {
+        position: relative;
+        padding-left: 2rem;
+      }
+      .decorado h3::before {
+        content: "★";
+        position: absolute;
+        left: 0.4rem;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 1.2rem;
+        height: 1.2rem;
+        display: grid;
+        place-items: center;
+        background: var(--bg-light);
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 6px;
+        box-shadow: var(--shadow);
+        font-size: 0.8rem;
+      }
+
+      /* Pseudo‑elementos: subrayado animado en enlaces */
+      .subrayado a {
+        position: relative;
+        color: var(--accent);
+        text-decoration: none;
+      }
+      .subrayado a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        height: 2px;
+        width: 0;
+        background: var(--accent);
+        transition: width 0.3s ease;
+      }
+      .subrayado a:hover::after,
+      .subrayado a:focus::after {
+        width: 100%;
+      }
+
+      /* Micropráctica: badge “Nuevo” con ::before en tarjetas */
+      .card.nuevo {
+        position: relative;
+        overflow: hidden;
+      }
+      .card.nuevo::before {
+        content: "Nuevo";
+        position: absolute;
+        top: 12px;
+        right: -14px;
+        transform: rotate(45deg);
+        background: #ff5c7c;
+        color: #fff;
+        font-weight: 700;
+        padding: 4px 24px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        border: 2px solid rgba(255, 255, 255, 0.25);
+        border-radius: 6px;
+        letter-spacing: 0.3px;
+      }
+
+      /* Accesibilidad: estados visible focus en inputs y botones de demo */
+      .demo-form input,
+      .demo-form button {
+        padding: 0.6rem 0.8rem;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        background: var(--bg-light);
+        color: #fff;
+      }
+      .demo-form input:focus,
+      .demo-form button:focus {
+        outline: 3px solid var(--accent);
+        outline-offset: 2px;
+      }
+      .demo-form button {
+        background: var(--primary);
+        cursor: pointer;
+        font-weight: 600;
+        transition: var(--transition);
+      }
+      .demo-form button:hover {
+        background: var(--accent);
+        color: var(--primary);
+        transform: translateY(-2px);
+      }
+      .demo-form button:active {
+        transform: translateY(0);
+      }
+      .demo-form button:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img src="../../images/logo1v.jpg" alt="Logo Code Cats Studio" />
+      <h1>Selectores y pseudo‑clases</h1>
+      <p>
+        Domina los selectores, combinadores, pseudo‑clases y pseudo‑elementos
+        con ejemplos claros y prácticos.
+      </p>
+    </header>
+
+    <nav>
+      <a href="../../index.html"
+        ><img src="../../images/home.gif" alt="Inicio" />Inicio</a
+      >
+      <a href="#contenido"
+        ><img src="../../images/libro.png" alt="Contenido" />Contenido</a
+      >
+      <a href="../../pages/ejercicio2.html"
+        ><img src="../../images/code.gif" alt="Ejercicio" />Ejercicio</a
+      >
+    </nav>
+
+    <main id="contenido">
+      <section>
+        <h2>2. Selectores y pseudo‑clases</h2>
+        <p>
+          Repasamos selectores básicos y combinadores, pseudo‑clases de
+          interacción y estructura, y pseudo‑elementos para crear decoradores y
+          efectos sin HTML extra.
+        </p>
+
+        <!-- 2.1 Selectores básicos y combinadores -->
+        <h3>2.1 Selectores básicos y combinadores</h3>
+        <div class="callout">
+          <h4>Resumen</h4>
+          <ul>
+            <li><strong>Básicos:</strong> elemento, clase, id, atributo.</li>
+            <li>
+              <strong>Combinadores:</strong> descendiente (espacio), hijo (>),
+              hermano adyacente (+), hermano general (~).
+            </li>
+            <li>
+              <strong>Especificidad y cascada:</strong> id &gt;
+              clase/atributo/pseudo‑clase &gt; elemento/pseudo‑elemento.
+            </li>
+          </ul>
+        </div>
+
+        <div class="demo demo-combinadores">
+          <div class="grid-2">
+            <div>
+              <p>
+                <strong>Objetivo:</strong> estilizar
+                <code>.card &gt; h3</code> sin afectar <code>.card h3</code> más
+                profundo.
+              </p>
+              <div class="cards">
+                <div class="card">
+                  <h3>H3 hijo directo</h3>
+                  <div class="inner">
+                    <h3>H3 anidado (no debe cambiar)</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p><strong>CSS clave:</strong></p>
+              <pre><code>/* Solo el h3 hijo directo de .card */
+.card &gt; h3 { color: var(--accent); }
+
+/* Cualquier h3 dentro de .card (incluye profundos) */
+/* .card h3 { color: orange; }  // Evitar si solo quieres el hijo directo */
+
+/* Especificidad: .card &gt; h3 gana sobre h3 simple */
+</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2.2 Pseudo‑clases -->
+        <h3>2.2 Pseudo‑clases (hover, focus, active, nth-child)</h3>
+        <div class="callout">
+          <h4>Tipos</h4>
+          <ul>
+            <li>
+              <strong>Interacciones:</strong> <code>:hover</code>,
+              <code>:focus</code>, <code>:active</code>, <code>:disabled</code>
+            </li>
+            <li>
+              <strong>Estructurales:</strong> <code>:first-child</code>,
+              <code>:last-child</code>, <code>:nth-child()</code>,
+              <code>:not()</code>
+            </li>
+          </ul>
+        </div>
+
+        <div class="demo">
+          <div class="grid-2">
+            <div class="demo-enlaces">
+              <p><strong>Enlaces accesibles con :hover y :focus:</strong></p>
+              <a href="#!">Abrir recurso</a>
+              <a href="#!">Descargar guía</a>
+              <pre><code>.link {
+  background: var(--primary);
+}
+.link:hover { background: var(--accent); color: var(--primary); }
+.link:focus { outline: 3px solid var(--accent); outline-offset: 2px; }
+.link:active { transform: translateY(0); }</code></pre>
+            </div>
+            <div class="demo-form">
+              <p><strong>Estados de formulario:</strong></p>
+              <input type="text" placeholder="Escribe tu nombre" />
+              <button>Enviar</button>
+              <button disabled>Deshabilitado</button>
+              <pre><code>input:focus, button:focus { outline: 3px solid var(--accent); }
+button:hover { background: var(--accent); color: var(--primary); }
+button:disabled { opacity: .6; cursor: not-allowed; }</code></pre>
+            </div>
+          </div>
+
+          <div style="margin-top: 1rem">
+            <p><strong>Listas alternadas con :nth-child(odd/even):</strong></p>
+            <ul class="lista-alt">
+              <li>Elemento 1</li>
+              <li>Elemento 2</li>
+              <li>Elemento 3</li>
+              <li>Elemento 4</li>
+              <li>Elemento 5</li>
+            </ul>
+            <pre><code>.lista-alt li:nth-child(odd)  { background: rgba(255,255,255,0.10); }
+.lista-alt li:nth-child(even) { background: rgba(255,255,255,0.06); }</code></pre>
+          </div>
+        </div>
+
+        <!-- 2.3 Pseudo‑elementos -->
+        <h3>2.3 Pseudo‑elementos (::before, ::after, ::first-line)</h3>
+        <div class="callout">
+          <p>
+            <strong>Idea clave:</strong> generan contenido virtual. Requieren
+            <code>content</code>. Útiles para iconos, decoraciones y efectos.
+          </p>
+        </div>
+
+        <div class="demo">
+          <div class="grid-2">
+            <div class="decorado">
+              <p><strong>::before como icono en título:</strong></p>
+              <h3>Título decorado</h3>
+              <pre><code>.titulo::before {
+  content: "★";
+  /* posicionamiento y estilos */
+}</code></pre>
+            </div>
+            <div class="subrayado">
+              <p><strong>Subrayado animado con ::after en enlaces:</strong></p>
+              <a href="#!">Ver documentación</a>
+              <pre><code>.enlace::after {
+  content: "";
+  position: absolute; left: 0; bottom: -2px;
+  height: 2px; width: 0; background: var(--accent);
+  transition: width .3s ease;
+}
+.enlace:hover::after, .enlace:focus::after { width: 100%; }</code></pre>
+            </div>
+          </div>
+
+          <div style="margin-top: 1rem">
+            <p>
+              <strong>::first-line</strong> aplica estilo a la primera línea
+              renderizada de un párrafo (según el ancho disponible).
+            </p>
+            <p class="first-line-demo" style="margin-top: 0.4rem">
+              Esta es una línea de texto un poco más larga para ilustrar el
+              pseudo‑elemento ::first-line. Cambia el ancho de la ventana y
+              observa el efecto en la primera línea.
+            </p>
+            <pre><code>.first-line-demo::first-line {
+  font-weight: 700;
+  color: var(--accent);
+}</code></pre>
+          </div>
+        </div>
+
+        <h3>Micropráctica</h3>
+        <div class="practice">
+          <p>
+            Marca “Nuevo” en tarjetas con <code>::before</code> sin modificar el
+            HTML interno.
+          </p>
+          <div class="cards">
+            <div class="card nuevo">
+              <h3>Tarjeta A</h3>
+              <p>Contenido breve.</p>
+            </div>
+            <div class="card">
+              <h3>Tarjeta B</h3>
+              <p>Sin “Nuevo”.</p>
+            </div>
+          </div>
+          <pre><code>.card.nuevo::before {
+  content: "Nuevo";
+  position: absolute; top: 12px; right: -14px; transform: rotate(45deg);
+  background: #ff5c7c; color: #fff; padding: 4px 24px; font-weight: 700;
+}</code></pre>
+        </div>
+
+        <h2>Checklist de comprensión</h2>
+        <ul>
+          <li>
+            ¿Puedo elegir el combinador correcto entre descendiente, hijo, + y
+            ~?
+          </li>
+          <li>¿Entiendo la especificidad y cómo afecta la cascada?</li>
+          <li>
+            ¿Implemento estados :hover y :focus visibles para accesibilidad?
+          </li>
+          <li>¿Sé usar :nth-child para alternar filas o elementos?</li>
+          <li>
+            ¿Puedo crear decoradores con ::before/::after sin tocar el HTML?
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>Code Cats Studio © 2025</p>
+    </footer>
+  </body>
+</html>

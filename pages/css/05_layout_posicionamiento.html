@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS — 1. Layout y posicionamiento</title>
+    <link rel="stylesheet" href="../../styles/base_teoria.css" />
+    <link rel="stylesheet" href="../../styles/css/base_css.css" />
+    <style>
+      .callout,
+      .demo,
+      .practice {
+        background: var(--bg-dark);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 14px;
+        padding: 1rem 1.2rem;
+        box-shadow: var(--shadow);
+        margin: 1rem 0;
+      }
+      .callout h4 {
+        margin: 0 0 0.5rem;
+      }
+      .pill {
+        display: inline-block;
+        padding: 0.15rem 0.6rem;
+        border-radius: 999px;
+        background: var(--bg-light);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        font-size: 0.85rem;
+        white-space: nowrap;
+      }
+      .box {
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        background: rgba(0, 0, 0, 0.35);
+        padding: 0.5rem 0.7rem;
+        border-radius: 10px;
+        display: inline-block;
+        color: #fff;
+        margin: 0.2rem 0.3rem 0.2rem 0;
+      }
+      .inline-demo a,
+      .inlineblock-demo a {
+        background: var(--primary);
+        color: #fff;
+        text-decoration: none;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        transition: var(--transition);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        margin-right: 6px;
+      }
+      .inline-demo a {
+        padding: 0.2rem 0.4rem;
+      }
+      .inlineblock-demo a {
+        display: inline-block;
+        padding: 0.6rem 0.8rem;
+      }
+      .inlineblock-demo a:hover,
+      .inline-demo a:hover {
+        background: var(--accent);
+        color: var(--primary);
+        transform: translateY(-2px);
+      }
+
+      /* Position demo */
+      .relative {
+        position: relative;
+      }
+      .badge {
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        background: #ff5c7c;
+        color: #fff;
+        padding: 4px 8px;
+        border-radius: 999px;
+        font-size: 0.8rem;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+        border: 2px solid rgba(255, 255, 255, 0.25);
+      }
+      .icono {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        width: 28px;
+        height: 28px;
+        border-radius: 8px;
+        display: grid;
+        place-items: center;
+        background: var(--bg-light);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        color: #fff;
+        font-weight: 700;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+        box-shadow: var(--shadow);
+      }
+
+      /* Float demo */
+      .float-wrap img {
+        float: left;
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+        margin: 6px 12px 6px 0;
+        border-radius: 12px;
+      }
+      .clear {
+        clear: both;
+      }
+
+      /* Flex demo */
+      .flex-menu {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 0.6rem;
+        background: var(--bg-light);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 12px;
+        box-shadow: var(--shadow);
+      }
+      .flex-menu a {
+        text-decoration: none;
+        color: #fff;
+        background: var(--primary);
+        padding: 0.6rem 0.9rem;
+        border-radius: 10px;
+        font-weight: 600;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        transition: var(--transition);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      }
+      .flex-menu a:hover {
+        background: var(--accent);
+        color: var(--primary);
+        transform: translateY(-2px);
+      }
+
+      /* Grid demo */
+      .gallery {
+        display: grid;
+        gap: 12px;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      }
+      .gallery img {
+        height: 160px;
+        object-fit: cover;
+      }
+
+      /* Tarjetas para microprácticas */
+      .tarjetas-flex {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .tarjetas-grid {
+        display: grid;
+        gap: 12px;
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .tarjeta {
+        background: var(--bg-light);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 12px;
+        padding: 12px;
+        min-width: 160px;
+        text-align: center;
+        box-shadow: var(--shadow);
+        color: #fff;
+      }
+
+      /* Pequeños apoyos responsive locales si hiciera falta */
+      @media (max-width: 480px) {
+        .badge {
+          top: -8px;
+          right: -8px;
+        }
+        .gallery img {
+          height: 140px;
+        }
+        .tarjeta {
+          min-width: 140px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img src="../../images/logo1v.jpg" alt="Logo Code Cats Studio" />
+      <h1>Layout y posicionamiento</h1>
+      <p>
+        Comprende los modos de display, el posicionamiento y los sistemas de
+        layout modernos (Flexbox y Grid).
+      </p>
+    </header>
+
+    <nav>
+      <a href="../../index.html"
+        ><img src="../../images/home.gif" alt="Inicio" />Inicio</a
+      >
+      <a href="#contenido"
+        ><img src="../../images/libro.png" alt="Contenido" />Contenido</a
+      >
+      <a href="../../pages/ejercicio1.html"
+        ><img src="../../images/code.gif" alt="Ejercicio" />Ejercicio</a
+      >
+    </nav>
+
+    <main id="contenido">
+      <section>
+        <h2>1. Layout y posicionamiento</h2>
+        <p>
+          En esta guía aprenderás cómo el navegador coloca y alinea elementos.
+          Verás los modos de
+          <span class="pill">display</span>, las estrategias de
+          <span class="pill">position</span>, un repaso de
+          <span class="pill">float</span> y dos herramientas modernas:
+          <span class="pill">Flexbox</span> y <span class="pill">Grid</span>.
+        </p>
+
+        <!-- 1.1 Display -->
+        <h3>1.1 Display: block, inline, inline-block, none</h3>
+        <div class="callout">
+          <h4>Explicación</h4>
+          <ul>
+            <li>
+              <strong>block</strong>: ocupa todo el ancho disponible e inicia en
+              línea nueva.
+            </li>
+            <li>
+              <strong>inline</strong>: fluye en línea; no acepta width/height
+              personalizados.
+            </li>
+            <li>
+              <strong>inline-block</strong>: fluye en línea, pero acepta
+              width/height y padding completos.
+            </li>
+            <li>
+              <strong>none</strong>: oculta el elemento y no ocupa espacio.
+            </li>
+          </ul>
+        </div>
+
+        <h4>Demostración</h4>
+        <div class="demo">
+          <p><strong>Block (div):</strong></p>
+          <div class="box" style="display: block; width: 100%">
+            Soy block y ocupo el ancho completo
+          </div>
+
+          <p>
+            <strong>Inline (a):</strong> no respeta width/height personalizados.
+          </p>
+          <div class="inline-demo">
+            Texto antes
+            <a href="#">Enlace inline</a>
+            <a href="#">Otro inline</a>
+            Texto después
+          </div>
+
+          <p>
+            <strong>Inline-block (span):</strong> permite width/height/padding:
+          </p>
+          <span class="box" style="display: inline-block; width: 220px"
+            >Inline-block 220px</span
+          >
+          <span class="box" style="display: inline-block; width: 140px"
+            >Inline-block 140px</span
+          >
+
+          <p>
+            <strong>None:</strong> el siguiente elemento está oculto (no ocupa
+            espacio):
+          </p>
+          <div class="box" style="display: none">No me verás</div>
+          <div class="box" style="margin-top: 6px">
+            Elemento visible después de display:none
+          </div>
+        </div>
+
+        <h4>Micropráctica (2 min)</h4>
+        <div class="practice">
+          <p>
+            Convierte botones inline a inline-block para alinearlos y aplicar
+            padding:
+          </p>
+          <p><strong>Antes (inline):</strong></p>
+          <div class="inline-demo">
+            <a href="#" style="display: inline">Botón A</a>
+            <a href="#" style="display: inline">Botón B</a>
+          </div>
+          <p><strong>Después (inline-block):</strong></p>
+          <div class="inlineblock-demo">
+            <a href="#">Botón A</a>
+            <a href="#">Botón B</a>
+          </div>
+          <pre><code>/* Solución conceptual */
+.boton { display: inline-block; padding: 8px 12px; }</code></pre>
+        </div>
+
+        <!-- 1.2 Posicionamiento -->
+        <h3>1.2 Posicionamiento: position/top/right/bottom/left/z-index</h3>
+        <div class="callout">
+          <h4>Explicación</h4>
+          <ul>
+            <li>
+              <strong>static</strong> (por defecto): sin posicionamiento
+              especial.
+            </li>
+            <li>
+              <strong>relative</strong>: crea contexto; puede desplazarse con
+              top/right/bottom/left sin salir del flujo.
+            </li>
+            <li>
+              <strong>absolute</strong>: sale del flujo; se posiciona respecto
+              al ancestro posicionado más cercano.
+            </li>
+            <li>
+              <strong>fixed</strong>: respecto al viewport; ideal para elementos
+              siempre visibles.
+            </li>
+            <li>
+              <strong>sticky</strong>: híbrido; “se pega” cuando alcanza el
+              offset indicado.
+            </li>
+          </ul>
+          <p>
+            <strong>z-index</strong> define el orden de apilamiento (requiere
+            position distinto de static).
+          </p>
+        </div>
+
+        <h4>Demostración: badge absoluto en contenedor relative</h4>
+        <div class="demo">
+          <div
+            class="relative"
+            style="
+              border: 1px solid rgba(255, 255, 255, 0.15);
+              border-radius: 12px;
+              padding: 16px;
+              text-align: center;
+            "
+          >
+            Tarjeta con badge
+            <span class="badge">Nuevo</span>
+          </div>
+          <pre><code>&lt;div class="relative"&gt;
+  Tarjeta con badge
+  &lt;span class="badge"&gt;Nuevo&lt;/span&gt;
+&lt;/div&gt;
+
+/* CSS clave */
+.relative { position: relative; }
+.badge { position: absolute; top: -10px; right: -10px; }</code></pre>
+        </div>
+
+        <h4>Demostración: fixed vs sticky</h4>
+        <div class="demo">
+          <div
+            style="
+              position: fixed;
+              left: 10px;
+              right: 10px;
+              top: 10px;
+              background: var(--bg-light);
+              border: 1px solid rgba(255, 255, 255, 0.15);
+              border-radius: 10px;
+              padding: 8px;
+              z-index: 5;
+            "
+          >
+            Soy fixed (siempre visible, relativo al viewport)
+          </div>
+          <div style="height: 60px"></div>
+          <div
+            style="
+              position: sticky;
+              top: 10px;
+              background: var(--bg-light);
+              border: 1px solid rgba(255, 255, 255, 0.15);
+              border-radius: 10px;
+              padding: 8px;
+            "
+          >
+            Soy sticky (me quedo pegado al llegar al top)
+          </div>
+          <div style="height: 220px">
+            <p>
+              Desplázate para percibir la diferencia: fixed permanece siempre;
+              sticky se activa al alcanzar su posición.
+            </p>
+          </div>
+          <pre><code>.fixed { position: fixed; top: 10px; left: 10px; right: 10px; }
+.sticky { position: sticky; top: 10px; }</code></pre>
+        </div>
+
+        <h4>Micropráctica</h4>
+        <div class="practice">
+          <p>
+            Posiciona un icono (absolute) en la esquina de una imagen
+            (contenedor relative):
+          </p>
+          <div
+            class="relative"
+            style="
+              border: 1px solid rgba(255, 255, 255, 0.15);
+              border-radius: 12px;
+              overflow: hidden;
+              max-width: 280px;
+              margin: 0 auto;
+            "
+          >
+            <img src="https://placehold.co/600x400" alt="Imagen de ejemplo" />
+            <div class="icono">★</div>
+          </div>
+          <pre><code>/* Claves */
+.contenedor { position: relative; }
+.icono { position: absolute; top: 8px; right: 8px; }</code></pre>
+        </div>
+
+        <!-- 1.3 Float y clear -->
+        <h3>1.3 Float y clear</h3>
+        <p>
+          <em>Histórico para maquetación;</em> hoy se usa para envolver texto
+          alrededor de imágenes. Para layout preferimos Flex/Grid.
+        </p>
+        <h4>Demostración</h4>
+        <div class="demo float-wrap">
+          <img src="https://placehold.co/240x240" alt="Imagen flotante" />
+          <p>
+            Este texto fluye alrededor de la imagen gracias a
+            <code>float: left</code>. Observa cómo el texto ocupa el espacio
+            disponible a la derecha.
+          </p>
+          <p>
+            Si necesitamos empezar una nueva sección debajo sin que se solape,
+            usamos <code>clear</code>.
+          </p>
+          <div class="clear"></div>
+          <p>
+            <strong>Sección posterior sin solaparse</strong> gracias a
+            <code>clear: both;</code>.
+          </p>
+          <pre><code>img { float: left; margin: 6px 12px 6px 0; }
+.clear { clear: both; }</code></pre>
+        </div>
+
+        <!-- 1.4 Flexbox y Grid -->
+        <h3>1.4 Flexbox y Grid</h3>
+        <div class="callout">
+          <h4>Conceptos clave</h4>
+          <ul>
+            <li>
+              <strong>Flexbox</strong>: eje principal,
+              <code>justify-content</code>, <code>align-items</code>,
+              <code>flex-wrap</code>.
+            </li>
+            <li>
+              <strong>Grid</strong>: filas/columnas, <code>gap</code>,
+              <code>grid-template-columns</code> con <code>repeat</code> y
+              <code>auto-fit</code>/<code>minmax</code>.
+            </li>
+          </ul>
+        </div>
+
+        <h4>Demostración Flex: menú horizontal centrado y espaciado</h4>
+        <div class="demo">
+          <nav class="flex-menu">
+            <a href="#">Inicio</a>
+            <a href="#">Blog</a>
+            <a href="#">Proyectos</a>
+            <a href="#">Contacto</a>
+          </nav>
+          <pre><code>.menu {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}</code></pre>
+        </div>
+
+        <h4>Demostración Grid: galería responsiva</h4>
+        <div class="demo">
+          <div class="gallery">
+            <img src="https://placehold.co/600x400" alt="Foto 1" />
+            <img src="https://placehold.co/600x400" alt="Foto 2" />
+            <img src="https://placehold.co/600x400" alt="Foto 3" />
+            <img src="https://placehold.co/600x400" alt="Foto 4" />
+            <img src="https://placehold.co/600x400" alt="Foto 5" />
+            <img src="https://placehold.co/600x400" alt="Foto 6" />
+          </div>
+          <pre><code>.gallery {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}</code></pre>
+        </div>
+
+        <h4>Micropráctica</h4>
+        <div class="practice" id="practicas">
+          <p>
+            <strong>Flex</strong>: reorganiza 4 tarjetas en una fila con
+            espaciado.
+          </p>
+          <div class="tarjetas-flex">
+            <div class="tarjeta">Tarjeta 1</div>
+            <div class="tarjeta">Tarjeta 2</div>
+            <div class="tarjeta">Tarjeta 3</div>
+            <div class="tarjeta">Tarjeta 4</div>
+          </div>
+          <pre><code>.contenedor {
+  display:flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}</code></pre>
+
+          <p style="margin-top: 14px">
+            <strong>Grid</strong>: las mismas 4 tarjetas en dos columnas.
+          </p>
+          <div class="tarjetas-grid">
+            <div class="tarjeta">Tarjeta A</div>
+            <div class="tarjeta">Tarjeta B</div>
+            <div class="tarjeta">Tarjeta C</div>
+            <div class="tarjeta">Tarjeta D</div>
+          </div>
+          <pre><code>.contenedor {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(2, 1fr);
+}</code></pre>
+        </div>
+
+        <h2>Checklist de comprensión</h2>
+        <ul>
+          <li>¿Cuándo usar inline vs inline-block?</li>
+          <li>
+            ¿Cómo crear un contexto relative y posicionar elementos absolute
+            dentro?
+          </li>
+          <li>¿Diferencias prácticas entre fixed y sticky al hacer scroll?</li>
+          <li>¿Cuándo usar Flex (una dimensión) vs Grid (dos dimensiones)?</li>
+          <li>
+            ¿Puedes construir una galería responsive con
+            <code>repeat(auto-fit, minmax())</code>?
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>Code Cats Studio © 2025</p>
+    </footer>
+  </body>
+</html>
